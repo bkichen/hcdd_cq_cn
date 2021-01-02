@@ -1,0 +1,140 @@
+
+/* CSS Document */
+
+.main_nav dd a{line-height:22px; font-size:14px;font-weight:bold;color:#666666; display:block;width:200px;text-align:center; ;vertical-align:middle;display:table-cell; text-align:center; height:60px; padding-left:30px;padding-right:30px;}
+.main_nav dd{border-bottom:1px solid #cccccc;}
+.main{ width:1000px; margin:0 auto; overflow:hidden; margin-top:20px;min-height: 800px;}
+.main_nav{ width:200px; height:500px; background-color:#f2f2f2; float:left;}
+#main_nav_title a{ font-size:16px; font-weight:bold; color:#33b0ef; background-image:none;}
+.spicel{background:url(../images/daohan_03.png) no-repeat center left;}
+
+
+
+.main_container_t{ line-height:40px;background:url(../images/important_1.png) no-repeat bottom left;font-size:18px;font-weight:bold;color:#323232;}
+.main_container{width:770px;float:right;}
+.m_title{ margin-top:20px;line-height:25px;background-color:#22b467;width:120px;text-align:center;font-size:14px;color:#FFF; margin-bottom:20px;}
+.main_container p{line-height:24px;margin-left:10px; text-indent:2em; font-size:14px; margin-right:10px;}
+.main_container h1{font-size:18px;margin:10px auto;width:500px;text-align:center;}
+.imp_pic{ display:block; margin:0 auto; }
+.accessory a{font-size:14px;color:#01679a;}
+.accessory i{margin-right:5px;color:#01679a;}
+.accessory{margin-top:20px;margin-left:20px;}
+.main_container_r{line-height:40px;background:url(../images/important_1.png) no-repeat bottom left;font-size:18px;font-weight:bold;color:#323232;}
+.about_me{ text-indent:2em;font-size:14px;line-height:20px; font-size:12px; font-family:"宋体";}
+.about{ min-height:300px;margin:20px 0;}
+.about_c{ margin:0 100px; min-height:400px;}
+.about_c p{line-height:24px;margin-left:10px; text-indent:2em; font-size:14px; margin-right:10px;}
+.about_c h1{font-size:18px;margin:20px auto;width:500px;text-align:center;}
+/*new*/
+.new_title{font-size:14px;color:#333333; line-height:30px;}
+.new_title:hover{ color:#108a4a;}
+.new_time{color:#333333;line-height:30px; font-size:12px; display:block; float:right;14px;}
+.cx_list{ overflow:hidden; margin-top:15px; border-bottom:#cccccc solid 1px;}
+.new p{line-height:20px; }
+.new{margin-left:40px;margin-right:40px;}
+
+/*new*/
+
+
+/*ask*/
+.ask{ overflow:hidden; border-bottom:#cccccc solid 1px; margin:15px 20px;}
+.ask_title{font-size:16px;color:#333333; line-height:30px;}
+.ask_title:hover{ color:#108a4a;}
+.answer{font-size:14px;color:#333333l;lin-height:24px;margin:0 20px; display:none;}
+/*ask*/
+
+
+/*join*/
+.join{ width:900px; margin:0 auto;overflow:hidden; border:4px #e5e5e5 solid; margin-top:30px;}
+.join_leftpic{float:left;}
+.join_text{float:right; margin-top:30px; margin-right:50px; width:300px;}
+.join_ttl{ background-color:#11b058; color:#FFF;font-size:20px; line-height:50px; text-align:center; width:300px;}
+.join_t{margin-top:13px; margin-bottom:6px;}
+.join_ipt01{ width:293px; height:28px; border:1px #cccccc solid; padding-left:5px;}
+.join_ipt02{width:160px; height:28px;border:1px #cccccc solid;padding-left:5px;}
+.join_yz{width:300px; height:30px;cursor:pointer;}
+.join_yz_pic{float:right;}
+.join_btm{display:block; background:url(../images/cy_denglu_07.png) no-repeat; line-height:40px; text-align:center; font-size:16px; color:#FFF;}
+.join_forget{ margin-top:30px; margin-bottom:10px; padding-left:10px;}
+.join_forget a{ color:#666666; margin-right:30px;}
+.go_back{ width:100px; line-height:40px; background:#e5e5e5;text-align:center; font-size:14px; color:#808080; float:right;cursor:pointer;}
+.go_b{ height:50px; width:906px; margin:0 auto; }
+
+.cy_cancel{width:83px;height:35px;float:left;}
+.cy_cancel p{line-height:35px;text-align:center;font-size:16px;color:#FFF;}
+.cy_cancel{width:83px;height:35px;float:left;}
+.cy_cancel p{line-height:35px;text-align:center;font-size:16px;color:#FFF;}
+
+.page a{line-height:40px; padding:10px 10px; color:#333333;}
+.page .page_s{background:#0093dd; color:#FFF;}
+.page a:hover{ color:#09C;}
+.page-login{ font-size:14px;}
+.page_com{ text-align:center;}
+.page{margin:10px auto;height:20px;}
+
+
+
+.new_head{ width:1000px; margin:0 auto;height:63px;}
+.new_t{background:url(../images/head-new.png);}
+.new_pic{ margin-top:10px; float:left;}
+.new_join{line-height:40px; font-size:14px; color:#333333; text-align:center;cursor:pointer;}
+.new_join:hover{ color:#FFF; background:#8fcbe9;}
+.out{ float:right; width:60px; height:60px; margin:10px 10px;}
+.line{ height:3px; background:#f2f2f2;}
+.line2{background:#09C;height:3px;}
+.pic{width:600px; height:300px; margin:30px auto; display:block;}
+.now{ font-weight:bold; margin-top:3px; color:#656565;}
+.subhead{ text-align:center; color:#656565; padding-bottom:20px;}
+.m_subhead{font-size:20px;margin:20px auto; margin-bottom:10px;width:500px;text-align:center;}
+.lead{ border-top:1px solid #b2b2b2; overflow:hidden; margin-bottom:50px; text-align:center;}
+.lead_l{ float:left; line-height:30px;font-size:14px;}
+.lead_r{ float:right; line-height:30px;font-size:14px;}
+.lead_l:hover{ color:#06F;}
+.lead_r:hover{ color:#06F;}
+.cob:hover{ color:#06F;cursor:pointer;}
+.cob{ line-height:30px; font-size:14px;}
+.cob i{ margin:0 5px;}
+.next{ margin:50px 0;}
+
+/* 忘记密码样式 */
+.third_step{width:100px; line-height:30px; font-size:16px; color:#FFF; background:#3e88cf;border-radius:5px;  -moz-border-radius:5px;-ms-border-radius:5px;-webkit-border-radius:5px;}
+.forg_bck{ background:url(../images/fforg_b_02.png) repeat-x;}
+.forg{ width:1000px; margin:0 auto;}
+.log{ padding-top:15px;}
+.forg_log{ overflow:hidden; margin-bottom:10px;}
+.back_index{float:right; padding-top:55px; color:#4c4c4c;}
+.forg_mn{ height:450px; background:#f2f2f2; border:#b2aeae 1px solid; border-bottom:none;}
+.wire{ height:3px; background:#77b4f3;}
+.forg_content{ width:650px; margin:0 auto;}
+.forg_tx{ font-size:20px; float:left; padding-left:10px;}
+.forg_key{ float:left; padding-left:3px;}
+.forg_ttl{ overflow:hidden; padding-top:30px; padding-bottom:20px; background:url(../images/forg_11.png) repeat-x bottom; margin-bottom:50px;}
+.tb_user{font-size:14px; width:120px;}
+.tb_b{display:block; height:55px;}
+.tb_s{display:block;height:70px;}
+.passw{ height:30px; width:250px; border:1px solid #6095c8;}
+.hint{ color:#f01919; margin-left:5px;}
+.first_wire{float:left;}
+.thrd_wire{float:right;}
+.secd_wire{ height:15px; background:url(../images/forg01_05.png); float:left; width:982px;}
+.back_index i{ font-size:16px; margin-right:5px;}
+.thire_wire{ overflow:hidden; margin-bottom:2px;}
+.cx_indexfooter{background:#FFF;height:100px;}
+.cx_indexfooter01{width:980px;margin:0 auto; text-align:center;}
+.cx_indexfooter01 p{color:#333333; font-family:"宋体"; line-height:23px;padding-left:69px;padding-top:35px;}
+.cx_indexfooter01 span{ font-family:"Arial";}
+/* 
+错误页面error.vm */
+
+.fzf_bck{ background:#f1f1f1;}
+.fzf{ width:1000px; margin:0 auto;}
+.fzf_log{display:block; margin-top:50px;}
+.fzf_tx01{ font-size:18px; font-style:italic; color:#b2b2b2;}
+.fzf_tx02{ font-size:16px; color:#b2b2b2; margin-left:10px;}
+.fzf_tx03{ font-size:16px; color:#313131; margin-top:20px;}
+.fzf_txc{ margin-top:35px;}
+.fzf_cb{ float:left; line-height:25px; width:80px; color:#FFF; background:url(../images/fzf_cb_03.png) no-repeat; text-align:center; margin-left:10px;}
+.fzf_cbh{ float:left;line-height:25px; color:#343434;}
+.fzf_cbc{ overflow:hidden; width:260px; margin:0 auto;margin-top:40px;}
+.fzf_tx{ text-align:center; margin-top:80px; min-height:500px;}
+.cx_indexfooter_erorr{background:#f1f1f1;height:100px;}

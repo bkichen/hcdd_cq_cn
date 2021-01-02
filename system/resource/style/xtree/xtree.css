@@ -1,0 +1,76 @@
+.webfx-tree-container {
+	margin: 0px;
+	padding: 0px;
+	font: icon;
+	white-space: nowrap;
+}
+
+.webfx-tree-item {
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
+	font: icon;
+	font-size:9pt;
+	color: #2667CA;
+	white-space: nowrap;
+}
+
+.webfx-tree-item a{
+	padding: 1px 2px 1px 2px;
+	font-size:9pt;
+	COLOR: #18457B; 
+	HEIGHT: 15px; 
+	MARGIN: 0px; 
+	TEXT-DECORATION: none
+}
+.webfx-tree-item a:visited{
+	padding: 1px 2px 1px 2px;
+	font-size:9pt;
+	COLOR: #18457B; 
+	HEIGHT: 15px; 
+	MARGIN: 0px; 
+	TEXT-DECORATION: none
+}
+.webfx-tree-item a:active{
+	padding: 1px 2px 1px 2px;
+	font-size:9pt;
+	COLOR: #008800; 
+	HEIGHT: 15px; 
+	MARGIN: 0px; 
+	TEXT-DECORATION: none
+}
+.webfx-tree-item a:hover{
+	padding: 1px 2px 1px 2px;
+	font-size:9pt;
+	COLOR: #ff0000; 
+	HEIGHT: 15px; 
+	MARGIN: 0px; 
+	TEXT-DECORATION: none
+}
+.webfx-tree-item a.selected{
+	padding: 1px 2px 1px 2px;
+	font-size:9pt;
+	COLOR: #ff0000; 
+	HEIGHT: 15px; 
+	MARGIN: 0px; 
+	TEXT-DECORATION: none
+}
+.webfx-tree-item a.selected-inactive {
+	padding: 0px 2px 1px 2px;
+	font-size:9pt;
+	COLOR: #008800; 
+	HEIGHT: 15px; 
+	MARGIN: 0px; 
+	TEXT-DECORATION: none
+}
+
+
+.webfx-tree-item img {
+	
+	border: 0px;vertical-align: middle;
+}
+
+.webfx-tree-icon {
+	width: 16px;
+	height: 16px;
+	padding-bottom:5px;
+}

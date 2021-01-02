@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=dege,chrome=1">
+    <title>重庆市合川广播电视大学-重庆广播电视大学图书馆</title><meta name="keywords" content="重庆市合川广播电视大学-重庆广播电视大学图书馆">
+
+    <link rel="stylesheet" href="css/base1.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/search.css">
+    <script src="js/jquery-1.4.1.min.js"></script>
+    <script src="js/html5shiv.js"></script>
+<!--Announced by Visual SiteBuilder 9-->
+<link rel="stylesheet" type="text/css" href="_sitegray/_sitegray_d.css">
+<script language="javascript" src="_sitegray/_sitegray.js"></script>
+<!-- CustomerNO:77656262657232307b7a475c53535742000000034354 -->
+<link rel="stylesheet" type="text/css" href="http://elib.cqdd.cq.cn/index.vsb.css">
+<script type="text/javascript" src="system/resource/js/counter.js"></script>
+<script type="text/javascript">_jsq_(1001,'/index.jsp',-1,1678358593)</script>
+</head>
+<body>
+    <header class="wh ma min-wh">
+        <div class="top ma wh2 clr">
+            <ul class="hTop-ul">
+                <li><img src="img/old.png" alt="旧版"><p><a href="old_index.html">怀恋旧版</a></p></li>
+                <li><img src="img/time.png" alt="开馆时间"><p><a href="#">开馆时间</a></p></li>
+                <li><img src="img/view.png" alt="访问量"><p>  <a href="#">访问量:<img src="system/_component/jsq/counter-1001_1678358593_8_2_0_TO.jpg" style="float:right;"></a>  
+</p></li>
+            </ul>
+            <div class="fr logon"><img src="img/logon.png" alt="登录"><a href="javascript:;"><p>您好，请登录！</p></a></div>
+        </div>
+        <div class="footer wh ma min-wh">
+            <div class="wh2 ma">
+            <img src="img/dd_logo.png" alt="logo">
+            <div class="hFooter-r">
+                <div>
+                    <p class="hSelect"><a href="#">中文</a></p>
+                    <p><a href="#">English</a></p>
+                </div>
+                <nav><a href="index/gk.html">概况</a>
+                    
+<a href="index/zn.html">指南</a>
+                    
+<a href="index/zy.html">资源</a>
+                    
+<a href="index/fw.html">服务</a>
+                    
+</nav>
+            </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="banner" class="wh min-wh ma oh">    <script language="javascript" src="system/resource/js/dynclicks.js"></script><ul class="banner-img">
+            
+<li style="background:url(img/banner.png) no-repeat center"></li>
+            
+</ul>
+        <ul class="banner-icon">            
+ <li class="banner-icon-select">1</li>
+
+            
+        </ul></section>
+
+    <div id="form"> 
+
+        <div class="search">
+            <div class="list_box">
+                <!--导航-->
+                <div class="list fl">
+                    <a class="e" href="javascript://">馆藏查询</a> <i> </i> <a href="javascript://">CNKI学术搜索</a>
+                </div>
+               <p class="fl"><a href="#">帮助</a></p>
+                <!--二导航-->
+               
+                <div class="down1" style="display: none">
+                    <div class="le fleft">
+                    </div>
+                    <div class="ce fleft">
+                    </div>
+                    <div class="ri fleft">
+                    </div>
+                </div>
+               
+              </div>
+            <!---检索 -->
+            <div class="fclear"></div>
+
+            <div class="kuang" style="z-index: 9999">
+                <div class="left fleft">
+                </div>
+                <div class="bor fleft">
+                    <div class="author fleft">
+                        <span val="all" valtwo=" ">全部</span>
+                        <div class="author_down" style="top: -152px;display: none"><a href="javascript://" val="all">全部</a><a href="javascript://" val="title">题名</a><a href="javascript://" val="creatorSearch">作者</a><a href="javascript://" val="publisher">出版社</a><a href="javascript://" val="isbnSearch">标准编码</a><a href="javascript://" val="callNumberSearch">索书号</a></div>
+                    </div>
+                    <input class=" fleft" id="searchContent" type="text" value="请输入中文关键字" v1="请输入中文关键字" v2="请输入英文关键字" v3="请输入关键字" rel="请输入中文关键字">
+                    <div class=" fclear">
+                    </div>
+                </div>
+                <div class="right fleft">
+                    <input type="button" id="SearchButton"></div>
+                <div class=" fclear">
+                </div>
+            </div>
+           
+        </div>
+
+        <div style="display:none">
+    <form id="formGcAll" name="formGcAll" action="http://192.168.252.112:8080/opac/search/" method="post" target="_blank">
+  <input type="hidden" name="tag" value="search">
+  <input type="hidden" name="subtag" value="simsearch">
+  <select name="corename">
+    <option value="">全部馆藏</option>
+    <option value="Book">馆藏图书</option>
+    <option value="Journal">馆藏期刊</option>
+    <option value="NonBook">非书资料</option>
+  </select>
+  <input type="hidden" name="gcbook" value="yes">
+  <br>
+  搜索内容：
+  <input name="q" id="q" type="text" class="search-text" value="">
+  <br>
+  <label>
+        <input type="radio" name="field" value="title" id="title" checked="checked">
+        <em>题名</em>
+  </label>
+  <label>
+        <input type="radio" name="field" value="creatorSearch" id="creatorSearch">
+        <em>作者</em>
+  </label>
+  <label>
+        <input type="radio" name="field" value="publisher" id="publisher">
+        <em>出版社</em>
+  </label>
+  <label>
+        <input type="radio" name="field" value="isbnSearch" id="isbnSearch">
+        <em>标准编码</em>
+  </label>
+  <label>
+        <input type="radio" name="field" value="callNumberSearch" id="callNumberSearch">
+        <em>索书号</em>
+  </label>
+  <label>
+        <input type="radio" name="field" value="all" id="all">
+        <em>全部字段</em>
+  </label>
+  <br>
+  <input id="inputsub" type="submit" value="查询">
+</form></div>
+    </div>
+
+
+    <nav id="nav" class="wh min-wh ">
+        <ul id="nav-img-id" class="nav-img wh2 ma">
+            <li class="Nav-img-select"><img src="img/link.png" alt=""><a href="#">快速链接</a></li>
+            <li><img src="img/data.png" alt=""><a href="javascript:;" target="">资源</a></li>
+            <li><img src="img/serve.png" alt=""><a href="javascript:;" target="">服务</a></li>
+            <li><img src="img/dzxh.png" alt=""><a href="javascript:;">开放大学资源</a></li>
+            <li><img src="img/tsg.png" alt=""><a href="#">特色馆</a></li>
+            <li><img src="img/wxtsg.png" alt=""><a href="index/dedh/wxtsg.html" target="">微信图书馆</a></li>
+            <li><img src="img/ydtsg.png" alt=""><a href="#">移动图书馆</a></li>
+            <li><img src="img/mytsg.png" alt=""><a href="javascript:;" target="">我的图书馆</a></li>
+        </ul>
+        <section class="wh min-wh ma">
+
+            <div class=" nav-link wh2 ma clr ">
+                <section class="nav-link-1 fl">
+                    <div class="main-title clr">
+                        <img src="img/useData.png" alt="" class="fl">
+                        <h3 class="fl">常用数据库</h3>
+                    </div>
+                    <ul class="nav-link-list1 hr"><script language="javascript" src="system/resource/js/centerCutImg.js"></script><script language="javascript" src="system/resource/js/ajax.js"></script><li><a href="javascript:;" title="经济发展智库">经济发展智库</a></li>
+                        
+<li><a href="javascript:;" title="超星电子期刊">超星电子期刊</a></li>
+                        
+<li><a href="info/1068/1771.html" title="远程访问服务">远程访问服务</a></li>
+                        
+<li><a href="javascript:;" title="万方视频数据库">万方视频数据库</a></li>
+                        
+<li><a href="javascript:;" title="畅想之星馆配电子书平台">畅想之星馆配电子书平台</a></li>
+                        
+<li><a href="javascript:;" title="CNKI学术图片知识库">CNKI学术图片知识库</a></li>
+                        
+<li><a href="javascript:;" title="超星汇雅电子图书远程访问">超星汇雅电子图书远程访问</a></li>
+                        
+<li><a href="javascript:;" title="维普考试资源系统">维普考试资源系统</a></li>
+                        
+<p class="fr"><a href="index/zy/ygsjk.html">more &gt;&gt;</a></p><script>_showDynClickBatch(['dynclicks_u4_1892','dynclicks_u4_1891','dynclicks_u4_1771','dynclicks_u4_1744','dynclicks_u4_1743','dynclicks_u4_1739','dynclicks_u4_1492','dynclicks_u4_1493'],[1892,1891,1771,1744,1743,1739,1492,1493],"wbnews", 1678358593)</script>
+</ul>
+                </section>
+                    
+                <section class=" nav-link-2 fl ">
+                    <div class="main-title clr">
+                        <img src="img/cService.png" alt="" class="fl">
+                        <h3 class="fl">便捷服务</h3>
+                    </div>
+                    <ul class="nav-link-list2 hr"><script language="javascript" src="system/resource/js/openlink.js"></script><a href="index/zy.html"><li><p>馆藏资源</p></li></a>
+                        
+<a href="index/fw/jyfw/jygz.html"><li><p>借阅规则</p></li></a>
+                        
+<a href="javascript:;"><li><p>读者荐购</p></li></a>
+                        
+<a href="index/fw/dzfw/dzhd1.html"><li><p>读者活动</p></li></a>
+                        
+<a href="alyb-tree.TreeTempUrl_1083.html"><li><p>读者留言</p></li></a>
+                        
+<a href="index/gk/kgsj.html"><li><p>开馆时间</p></li></a>
+                        
+<a href="index/zn/rgxz.html"><li><p>入馆须知</p></li></a>
+                        
+<a href="index/zy.html"><li><p>数据库</p></li></a>
+                        
+<a href="index/xzzq.html"><li><p>下载专区</p></li></a>
+                        
+</ul>
+                </section>
+
+                <section class=" nav-link-1 fl ">
+                    <div class="main-title clr">
+                        <img src="img/classnav.png" alt="" class="fl">
+                        <h3 class="fl">学科导航</h3>
+                        
+                    </div>
+                    <ul class="nav-link-list1 hr"><li><a href="javascript:;" title="科研项目管理系统">科研项目管理系统</a></li>
+                        
+<li><a href="javascript:;" title="moodle学习平台">moodle学习平台</a></li>
+                        
+<li><a href="javascript:;" title="办公自动化系统OA">办公自动化系统OA</a></li>
+                        
+<li><a href="javascript:;" title="数字校园信息门户">数字校园信息门户</a></li>
+                        
+<li><a href="javascript:;" title="高职教育">高职教育</a></li>
+                        
+<li><a href="info/1051/1658.html" title="CNKI个人机构馆操作指南">CNKI个人机构馆操作指南</a></li>
+                        
+<li><a href="javascript:;" title="开放教育">开放教育</a></li>
+                        
+<li><a href="javascript:;" title="学院知识服务平台">学院知识服务平台</a></li>
+                        
+<p class="fr"><a href="index/xkdh.html">more &gt;&gt;</a></p><script>_showDynClickBatch(['dynclicks_u6_1653','dynclicks_u6_1654','dynclicks_u6_1655','dynclicks_u6_1656','dynclicks_u6_1657','dynclicks_u6_1658','dynclicks_u6_1659','dynclicks_u6_1660'],[1653,1654,1655,1656,1657,1658,1659,1660],"wbnews", 1678358593)</script>
+</ul>
+
+                </section>
+            </div>
+
+            <div class="nav-data wh2 ma clr nav-dAs hide">
+                <ul>
+                    <li>
+                        <img src="img/gcdata_icon.png" alt="">
+                        <a href="javascript:;" target=""><h3>馆藏书目</h3></a>
+                        <div class="lr"></div>
+                        <p>简单搜素海量资源</p>
+                    </li>
+                    <li>
+                        <img src="img/buyData_icon.png" alt="">
+                        <a href="index/zy/ygsjk.html" target=""><h3>已购数据库</h3></a>
+                        <div class="lr"></div>
+                        <p>简单搜素海量资源</p>
+                    </li>
+                    <li>
+                        <img src="img/testData_icon.png" alt="">
+                        <a href="index/zy/sysjk.html" target=""><h3>试用数据库</h3></a>
+                        <div class="lr"></div>
+                        <p>简单搜素海量资源</p>
+                    </li>
+                    <li>
+                        <img src="img/else_icon.png" alt="">
+                        <a href="javascript:;" target=""><h3>其它</h3></a>
+                        <div class="lr"></div>
+                        <p>简单搜素海量资源</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-serve wh2 ma clr nav-dAs hide">
+                <ul>
+                    <li>
+                        <img src="img/jyfu.png" alt="">
+                        <a href="index/fw/jyfw.html" target=""><h3>借阅服务</h3></a>
+                        <div class="lr"></div>
+                        <p>简单搜素海量资源</p>
+                    </li>
+                    <li>
+                        <img src="img/kjfw.png" alt="">
+                        <a href="index/fw/kjfw.html" target=""><h3>空间服务</h3></a>
+                        <div class="lr"></div>
+                        <p>简单搜素海量资源</p>
+                    </li>
+                    <li>
+                        <img src="img/xjfw.png" alt="">
+                        <a href="javascript:;" target=""><h3>续借服务</h3></a>
+                        <div class="lr"></div>
+                        <p>简单搜素海量资源</p>
+                    </li>
+                    <li>
+                        <img src="img/qtfw.png" alt="">
+                        <a href="index/fw/qtfw.html" target=""><h3>其它服务</h3></a>
+                        <div class="lr"></div>
+                        <p>简单搜素海量资源</p>
+                    </li>
+                </ul>
+            </div>  
+        </section>
+        
+    </nav>
+
+
+    <div id="main" class="wh min-wh ma">
+
+        <div class="wh2 ma">
+
+        <section class="main-news fl">
+            <div class="main-title clr">
+                <img src="img/news.png" alt="" class="fl">
+                <h3 class="fl">新闻动态</h3>
+                <p class="fr"><a href="index/xwdt.html" target="">more >></a></p>
+            </div>
+            <ul class="main-news-list hr"><li><a href="info/1048/2022.html" title="国家开放大学图书馆一行到我校图书馆开展调研指导">国家开放大学图书馆一行到我校图书</a><span>2020-09-25</span></li>
+                
+<li><a href="info/1048/1983.html" title="图书馆召开疫情防控工作视频会">图书馆召开疫情防控工作视频会</a><span>2020-02-05</span></li>
+                
+<li><a href="info/1048/1981.html" title="足不出户，图书馆为你居家研学提供资源服务">足不出户，图书馆为你居家研学提供</a><span>2020-02-04</span></li>
+                
+<li><a href="info/1048/1946.html" title="图书馆开展馆员摄影知识讲座">图书馆开展馆员摄影知识讲座</a><span>2019-09-30</span></li>
+                
+<li><a href="info/1048/1941.html" title="我校“读万卷书、行万里路”教师旅行摄影展评选结果揭晓">我校“读万卷书、行万里路”教师旅</a><span>2019-09-26</span></li>
+                
+<li><a href="info/1048/1940.html" title="相约教师节 阅读共分享——学校新一期教师读书会成功举行">相约教师节 阅读共分享——学校新</a><span>2019-09-11</span></li>
+                
+<li><a href="info/1048/1937.html" title="我校图书馆荣获“重庆市高校图书馆2019年图书情报学术成果奖”一等奖">我校图书馆荣获“重庆市高校图书馆</a><span>2019-09-09</span></li>
+                
+<li><a href="info/1048/1938.html" title="图书馆开展暑期生活分享会">图书馆开展暑期生活分享会</a><span>2019-09-07</span></li>
+                
+<script>_showDynClickBatch(['dynclicks_u7_2022','dynclicks_u7_1983','dynclicks_u7_1981','dynclicks_u7_1946','dynclicks_u7_1941','dynclicks_u7_1940','dynclicks_u7_1937','dynclicks_u7_1938'],[2022,1983,1981,1946,1941,1940,1937,1938],"wbnews", 1678358593)</script>
+</ul>
+        </section>
+
+        <section class="main-notice fl">
+            <div class="main-title clr">
+                <img src="img/notice.png" alt="" class="fl">
+                <h3 class="fl">通知公告</h3>
+                <p class="fr"><a href="index/tzgg1.html" target="">more >></a></p>
+            </div>
+            <ul class="main-notice-list hr clr"><li>
+                    <div class="main-notice-time fl">
+                        <p>23/10</p>
+                        <p>2020</p>
+                    </div>
+                    <div class="main-notice-title fl">
+                        <a href="info/1049/2033.html"><h4>国开大专题讲座丨数字图书馆使用与...</h4></a>
+                        <p>专题讲座丨数图使用与数字阅读推广为更...</p>
+                    </div>
+                </li>
+
+                
+<li>
+                    <div class="main-notice-time fl">
+                        <p>10/09</p>
+                        <p>2020</p>
+                    </div>
+                    <div class="main-notice-title fl">
+                        <a href="info/1049/2021.html"><h4>图书馆关于恢复正常开放的通知</h4></a>
+                        <p>图书馆关于恢复正常开放的通知亲爱的读...</p>
+                    </div>
+                </li>
+
+                
+<li>
+                    <div class="main-notice-time fl">
+                        <p>03/07</p>
+                        <p>2020</p>
+                    </div>
+                    <div class="main-notice-title fl">
+                        <a href="info/1049/2012.html"><h4>图书馆“阅读马拉松”线上阅读活动...</h4></a>
+                        <p>5月，学校图书馆启动了 “阅读马拉松”...</p>
+                    </div>
+                </li>
+
+                
+<li>
+                    <div class="main-notice-time fl">
+                        <p>14/05</p>
+                        <p>2020</p>
+                    </div>
+                    <div class="main-notice-title fl">
+                        <a href="info/1049/2011.html"><h4>关于图书馆服务调整的通知</h4></a>
+                        <p>亲爱的读者：为保障本校师生文献资源需...</p>
+                    </div>
+                </li>
+
+                
+<li>
+                    <div class="main-notice-time fl">
+                        <p>23/04</p>
+                        <p>2020</p>
+                    </div>
+                    <div class="main-notice-title fl">
+                        <a href="info/1049/2001.html"><h4>4.23读书日活动——“中国共产党思...</h4></a>
+                        <p>活动对象：全校读者用户活动时间：4月23...</p>
+                    </div>
+                </li>
+
+                
+<script>_showDynClickBatch(['dynclicks_u8_2033','dynclicks_u8_2021','dynclicks_u8_2012','dynclicks_u8_2011','dynclicks_u8_2001'],[2033,2021,2012,2011,2001],"wbnews", 1678358593)</script>
+</ul>
+        </section>
+
+        <section class="main-video fl">
+            <div class="main-title clr">
+                <img src="img/video.png" alt="" class="fl">
+                <h3 class="fl">图图课堂（视频）</h3>
+                <p class="fr"><a href="index/ttkt.html" target="">more >></a></p>
+            </div>
+            <ul class="main-video-list" id="video-list"><li>
+                    <img src="" alt="">
+                    <p><a href="info/1050/1945.html" title="素养小课堂之搜索引擎小技巧">素养小课堂之搜索引擎小技</a></p>
+                </li>
+                
+<li>
+                    <img src="" alt="">
+                    <p><a href="info/1050/1883.html" title="图书馆设备使用指南">图书馆设备使用指南</a></p>
+                </li>
+                
+<script>_showDynClickBatch(['dynclicks_u9_1945','dynclicks_u9_1883'],[1945,1883],"wbnews", 1678358593)</script>
+</ul>
+
+        </section>
+
+        </div>
+        
+    </div>
+
+    <footer class="wh min-wh ma"><div class="footer-top footer-top-color">
+            <ul class="ma">
+                <li><img src="img/index.png" alt=""><p><a href="index.html">学校首页</a></p></li>
+                <li><img src="img/email.png" alt=""><p><a href="mailto:2941456279@qq.com">馆内信箱</a></p></li>
+            </ul>
+            <p>地址：重庆市九龙坡区九龙科技园华龙大道1号  电话：023-68433134</p>
+        </div>
+        <p class="footer-p-color">版权所有 2009-2020 重庆市合川广播电视大学-重庆广播电视大学图书馆</p></footer>
+    <!-- <div id="video-shadow" >
+        <div class="video-btn" id="video-btn">
+            <div class="video-area" id="video-area"></div>
+            <a href="" class="video-shut" id="video-shut">X</a>
+        </div>
+        <div id="shadow"></div>
+    </div> -->
+</body>
+<script src="js/move.js"></script>
+<script src="js/index.js"></script>
+<script src="js/search.js"></script>
+
+</html>

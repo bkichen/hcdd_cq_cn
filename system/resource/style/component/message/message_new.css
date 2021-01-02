@@ -1,0 +1,20 @@
+A.message_new_menu
+{
+    text-decoration: none;
+    color:           black
+}
+A.message_new_menu:link
+{
+    text-decoration: none;
+    color:           black
+}
+A.message_new_menu:visited
+{
+    text-decoration: none;
+    color:           black
+}
+A.message_new_menu:hover
+{
+    text-decoration: underline;
+    color:           red
+}

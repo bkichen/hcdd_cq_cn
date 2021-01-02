@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=dege,chrome=1">
+    <title>读者留言-重庆市合川广播电视大学-重庆广播电视大学图书馆</title><meta name="keywords" content="重庆市合川广播电视大学-重庆广播电视大学图书馆">
+
+<!--    <link rel="stylesheet" href="css/reset.css"> -->
+    <link rel="stylesheet" href="http://elib.cqdd.cq.cn/css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/html5shiv.js"></script>
+<!--Announced by Visual SiteBuilder 9-->
+<link rel="stylesheet" type="text/css" href="_sitegray/_sitegray_d.css">
+<script language="javascript" src="_sitegray/_sitegray.js"></script>
+<!-- CustomerNO:77656262657232307b7a475c53535742000000034354 -->
+<link rel="stylesheet" type="text/css" href="alyb.vsb.css">
+<script type="text/javascript" src="system/resource/js/counter.js"></script>
+<script type="text/javascript">_jsq_(1083,'/alyb.jsp',-1,1678358593)</script>
+</head>
+<body>
+    <header class="wh ma min-wh">
+        <div class="top ma wh2 clr">
+            <ul class="hTop-ul">
+                <li><img src="img/old.png" alt="旧版"><p><a href="#">怀恋旧版</a></p></li>
+                <li><img src="img/time.png" alt="开馆时间"><p><a href="#">开馆时间</a></p></li>
+                <li><img src="img/view.png" alt="访问量"><p>  <a href="#">访问量:<img src='system/_component/jsq/counter-1001_1678358593_8_2_0_TO.jpg' style="float:right;"></a>  
+</p></li>
+            </ul>
+            <div class="fr logon"><img src="img/logon.png" alt="登录"><p>您好，请登录！</p></div>
+        </div>
+    </header>
+    
+    <div class="img wh min-wh ma"></div>
+
+    <div class="listMain wh min-wh ma">
+        <div class="listMain-con wh2 ma clr">
+            <aside class="fl">
+                <ul id="listNav"><li><a href="javascript:;">读者互动专栏</a></li>
+                    
+<li><a href="javascript:;">聚焦图书馆</a></li>
+                    
+<li><a href="javascript:;">图书馆之窗</a></li>
+                    
+<li><a href="index/fw/dzfw/dzhd1.html">读者活动</a></li>
+                    
+<li class="asideSec"><a href="">读者留言</a></li>
+                    
+<li><a href="javascript:;">我的图书馆</a></li>
+                    
+</ul>
+            </aside>
+            <div class="listMain-con-r fr">
+                <p class="dqwz">  <a href="javascript:;">首页</a> 
+  
+    
+   &gt; <a href="index/fw.html">服务</a> 
+  
+    
+   &gt; <a href="javascript:;">读者服务</a> 
+  
+    
+   &gt; <a href="">读者留言</a> 
+  
+    
+</p>
+                <div class="content"><link href="system/resource/style/component/message/message_new.css" type="text/css" rel="stylesheet">
+
+
+<script language="javascript" src="system/resource/message/validdata.js"></script>
+<script language="javascript" src="system/resource/storage/service/storageservices.js"></script>
+<script language="javascript" src="system/resource/js/base64.js"></script>
+<script language="javascript" src="system/resource/js/md5.js"></script>
+<script language="javascript" src="system/resource/js/sm3/core.js"></script>
+<script language="javascript" src="system/resource/js/sm3/cipher-core.js"></script>
+<script language="javascript" src="system/resource/js/sm3/jsbn.js"></script>
+<script language="javascript" src="system/resource/js/sm3/jsbn2.js"></script>
+<script language="javascript" src="system/resource/js/sm3/sm3.js"></script>
+<script language="javascript"> 
+ 
+/** 
+ *功能说明：去掉字符串左边的空格 
+　　　　*@param string 为传进来的字符串 
+　　　　*@return 为字符串 
+ */ 
+function ltrim(string) 
+{ 
+    var objstr = string; 
+
+    if((objstr == "") || (objstr == " ")) 
+    { 
+        return ""; 
+    } 
+
+    var head; 
+    var exitw = true; 
+
+    while(exitw) 
+    { 
+        if((objstr == "") || (objstr == " ")) 
+        { 
+            return ""; 
+        } 
+
+        head = objstr.charAt(0); 
+        if(head == " ") 
+        { 
+            objstr = objstr.substr(1); 
+        } 
+        else 
+        { 
+            exitw = false; 
+        } 
+    } 
+
+    return objstr; 
+} 
+    function rtrim(string) 
+    { 
+        var objstr = string; 
+     
+        if((objstr == "") || (objstr == " ")) 
+        { 
+            return ""; 
+        } 
+     
+        var head; 
+        var exitw = true; 
+     
+        while(exitw) 
+        { 
+            if((objstr == "") || (objstr == " ")) 
+            { 
+                return ""; 
+            } 
+     
+            head = objstr.charAt(objstr.length - 1); 
+            if(head == " ") 
+            { 
+                objstr = objstr.substr(0, objstr.length - 2); 
+            } 
+            else 
+            { 
+                exitw = false; 
+            } 
+        } 
+     
+        return objstr; 
+    } 
+    /** 
+     *功能说明：去掉字符串两边的空格 
+    　　　　*@param string 为传进来的字符串 
+    　　　　*@return 为字符串　　　 
+    */ 
+    function trim(string) 
+    { 
+        var objstr = string; 
+        objstr = ltrim(objstr); 
+        objstr = rtrim(objstr); 
+        return objstr; 
+    } 
+    function yincang(ischecked) 
+{ 
+ if(ischecked) 
+ document.getElementById("yincangid").style.display="none"; 
+ else 
+ document.getElementById("yincangid").style.display="inline-block"; 
+} 
+ function showmessage(messageid , name) 
+    { 
+       window.showModalDialog('/system/resource/js/message/messagecontents.jsp?wbtreeid=1083&name='+name+'&messageid='+messageid+'&messagecontentcolor=#F2FDFF&fontstyle= class="font172002" &titlecolor=#E2F2FA&recontentcolor=#F2FDFF',window,"dialogWidth:600px;status:no;dialogHeight:300px");  
+    } 
+    function OpenPopWin(winURL, winWidth, winHeight, moveX, moveY, winFeatures, wName) 
+ { 
+  return WinOpenPopWin(window, winURL, winWidth, winHeight, moveX, moveY, winFeatures, wName); 
+ } 
+   
+    function WinOpenPopWin(win, winURL, winWidth, winHeight, moveX, moveY, winFeatures, wName) 
+ { 
+  if(WinOpenPopWin.arguments.length == 8) 
+      winFeatures = "," + winFeatures; 
+  else 
+      winFeatures = ""; 
+      x = (screen.width - winWidth) / 2; 
+   
+      if(moveX != "") 
+          x = moveX; 
+   
+      y = (screen.height - winHeight) / 2; 
+   
+      if(moveX != "") 
+          y = moveY; 
+   
+      var temp = win.open(winURL, wName, "top=" + y + ",left=" + x + ",width=" + winWidth + ",height=" + winHeight + winFeatures + ",resizable=yes"); 
+      return temp; 
+  } 
+    function show(viewid,submitstyle,owner,dbName,ownerName, url,language) 
+ { 
+     OpenPopWin('/system/resource/js/message/addmessagepage.jsp?pformname=b172002b&viewid='+viewid+'&submitstyle='+submitstyle+'&owner='+owner+'&dbName='+dbName+'&ownerName='+ownerName+'&url='+url+'&language='+language  ,620, 520, "220", "120", "", 'showmessage'); 
+ } 
+    function oprcontent() 
+    { 
+      
+    } 
+     
+</script>
+<form name="b172002b" method="post" id="b172002b" style="display: inline" action="/alyb.jsp?wbtreeid=1083&urltype=tree.TreeTempUrl">
+
+    <table width="94%" border="0" align="center" cellpadding="2" cellspacing="1"><tr>
+
+		<td align="left" valign="middle">
+			<a href="javascript:show('172002','','1678358593','vsb','elib','L2FseWIuanNw','zh_CN');" class="menu">
+			    <span class="fyfont172002" style="background-color:"> 
+
+ 				<img src="system/resource/images/message/lyb_qdt.gif" align="absmiddle" border="0">
+
+                        我要发言
+                 </span>
+             </a>
+		</td>
+	</tr></table>
+
+	<table class="bgstyle172002" class="window172002" width="100%" border="0">
+		<tr height="24">
+			<td width="40%" align="center" background="/system/resource/images/message/lmt_title_bg.gif" nowrap="">
+				标题
+			</td>
+			<td width="15%" align="center" background="/system/resource/images/message/lmt_title_bg.gif" nowrap="">
+				分类名称
+			</td>
+			<td width="15%" align="center" background="/system/resource/images/message/lmt_title_bg.gif" nowrap="">
+				发布人
+			</td>
+			<td width="15%" align="center" background="/system/resource/images/message/lmt_title_bg.gif" nowrap="">
+				提交时间
+			</td>
+			<td width="15%" align="center" background="/system/resource/images/message/lmt_title_bg.gif" nowrap="">
+				状态
+			</td>
+		</tr>
+	</table>
+
+	<table class="window172002" bgcolor="#ffffff" border="0" cellspacing="1" cellpadding="2" width="100%">
+        <tr>
+			<td>
+				<font color="#892407" size="2"><strong>没有留言内容</strong></font>
+			</td>
+		</tr>
+	</table>
+
+	<table class="window172002" width="100%" border="0" cellpadding="6" cellspacing="1">
+
+		<tr>
+			<input type="hidden" name="b172002bactiontype" id="b172002bactiontype" value=""><input type="hidden" name="b172002bo" value="desc"><input type="hidden" name="b172002bk" value="wbdate">
+<style type="text/css">
+.headStyle29zf1txcaa, .headStyle29zf1txcaa td, .headStyle29zf1txcaa div {font-size: 12px;font-family:宋体; color: #000000; margin-left: auto; margin-right: auto; line-height:14px;}
+.defaultButtonStyle {font-size: 12px;font-family:宋体; height:20px;color: #000000;BORDER: #AFD5F5 1px solid; margin: 0px;padding: 0px; FILTER:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff, EndColorStr=#BDDBF7);  CURSOR: pointer; line-height:14px;background:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#BDDBF7));background: -moz-linear-gradient( top,#ffffff,#BDDBF7);background:-ms-linear-gradient(top,#ffffff 0%,#bddbf7 100%)}
+.defaultinputStyle {font-size: 12px;font-family:宋体; height:20px; border:1px solid #AFD5F5; line-height:14px;}
+.colHeader {font-size: 12px;font-family:宋体; line-height:14px;}
+.headStyle29zf1txcaa a, .pageList .this-page {font-size: 12px;font-family:宋体; display:inline-block; height:14px; padding: 2px 4px; border: solid 1px #AFD5F5; background: #fff; text-decoration: none; MARGIN-RIGHT: 1px;line-height:14px;}
+.headStyle29zf1txcaa a:visited {font-size: 12px;font-family:宋体; color: #000000; text-decoration: none; line-height:14px;}
+.headStyle29zf1txcaa .PrevDisabled {font-size: 12px;font-family:宋体; display:inline-block;height:14px;  margin-right: 3px; padding: 2px 4px; background: #fff;color:#ccc;border: solid 1px #AFD5F5; line-height:14px;}
+.headStyle29zf1txcaa .SelectList {font-size: 12px;font-family:宋体;line-height:14px;}
+.headStyle29zf1txcaa .Prev { font-size: 12px;font-family:宋体; margin-right: 3px; padding: 2px 4px;line-height:14px;}
+.headStyle29zf1txcaa .break {font-size: 12px;font-family:宋体; border: none; text-decoration: none; line-height:14px;}
+.headStyle29zf1txcaa .NextDisabled { font-size: 12px;font-family:宋体;display:inline-block; height:14px; margin-left: 2px; padding: 2px 4px;background: #fff;color:#ccc;border: solid 1px #AFD5F5; line-height:14px; }
+.headStyle29zf1txcaa .Next { font-size: 12px;font-family:宋体; margin-left: 2px; padding: 2px 4px;line-height:14px;}
+.headStyle29zf1txcaa .this-page {font-size: 12px;font-family:宋体;display:inline-block;height:14px;padding: 2px 4px; border: solid 1px #AFD5F5; background: #E1F0FD; font-weight: bold; color:black; MARGIN-RIGHT: 1px;line-height:14px;}
+.headStyle29zf1txcaa a:hover {font-size: 12px;font-family:宋体;color: black; background: #EFF7FE; border-color: #AFD5F5; text-decoration: none;line-height:14px;}
+.headStyle29zf1txcaa a:link {font-size: 12px;font-family:宋体;color: #000000; text-decoration: none;line-height:14px;}
+.headStyle29zf1txcaa a:active { font-size: 12px;font-family:宋体;color: black; text-decoration: none; background: #EFF7FE; line-height:14px;}
+</style>
+			</tr><tr><td colspan="5"><table cellspacing="0" class="headStyle29zf1txcaa" width="100%" cellpadding="1"><tr valign="middle"><td nowrap="" align="left" width="1%">共0条&nbsp;<input type="hidden" name="b172002bfc" value="10">&nbsp;0/0&nbsp;</td><td nowrap="" align="left"><div></div></td><td nowrap="" align="right"></td></tr></table></td></tr>
+		
+	</table>
+</form>
+
+
+</form></div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer class="wh min-wh ma"><div class="footer-top footer-top-color">
+            <ul class="ma">
+                <li><img src="img/index.png" alt=""><p><a href="index.html">学校首页</a></p></li>
+                <li><img src="img/email.png" alt=""><p><a href="mailto:2941456279@qq.com">馆内信箱</a></p></li>
+            </ul>
+            <p>地址：重庆市九龙坡区九龙科技园华龙大道1号  电话：023-68433134</p>
+        </div>
+        <p class="footer-p-color">版权所有 2009-2020 重庆市合川广播电视大学-重庆广播电视大学图书馆</p></footer>
+</body>
+<script src="js/list.js"></script>
+
+</html>

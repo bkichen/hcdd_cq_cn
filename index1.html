@@ -1,0 +1,909 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>重庆市终身学习学分银行-学分银行</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<link href="Portal/portalCss/indexpublic.css" rel="stylesheet" type="text/css">
+<link href="Portal/portalCss/shanghaindex.css" rel="stylesheet" type="text/css">
+<link href="Portal/portalCss/cx-css.css" rel="stylesheet" type="text/css">
+<link href="Portal/portalCss/font-awesome.css" rel="stylesheet" type="text/css">
+<!-- jquery 应先于bootstrap引用 -->
+<script src="easyui/jquery-2.1.1.min.js"></script>
+<script src="easyui/jquery-migrate-1.1.1.min.js"></script>
+<!-- bootstrap 引用 -->
+<!-- bootstrap css 会与原有样式冲突 -->
+<!--<link href="Portal/ziqiu/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">-->
+<script type="text/javascript" src="Portal/ziqiu/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="Portal/js/shanghaiind.js"></script>
+<script src="Portal/DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="Portal/js/jquery.validate.js"></script>
+<script type="text/javascript" src="Portal/js/login.js"></script>
+<script src="Portal/js/Roll.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".item:odd").addClass("lbg");
+	})
+</script>
+<script type="text/javascript">
+	$(function() {
+		$(".loginbt").hover(function() {
+			$(".loginbox").show();
+			$(".loginbox").mouseleave(function() {
+				$(this).hide();
+			});
+
+		})
+	});
+</script>
+<script type="text/javascript">
+	$(function() {
+		var settime;
+		$("#scrollbar").hover(function() {
+			clearInterval(settime);
+		}, function() {
+			settime = setInterval(function() {
+				var ul_first = $("#scrollbar ul:first");
+				var height = ul_first.find("li:first").height();
+				ul_first.animate({
+					marginTop : -height + "px"
+				}, 600, function() {
+					ul_first.css({
+						marginTop : 0
+					}).find("li:first").appendTo(ul_first);
+				});
+			}, 3000);
+		}).trigger("mouseleave");
+	});
+</script>
+<!-- 收藏和设为主页 -->
+<script type="text/javascript">
+	function showLogin() {
+		$(".cy_denglubox").show();
+		$(".cy_dengluboxbg").show();
+		$(".indexcontainer").css("position", "relative");
+		$(".indexcontainer").css("z-index", "-5");
+		document.documentElement.scrollTop = document.body.scrollTop =0;
+	}
+
+	//设置主页
+	function addHomepage(obj) {
+		var url = window.location.href;
+		try {
+			obj.style.behavior = "url(#default#homepage)";
+			obj.sethomepage(url);
+		} catch (e) {
+			if (document.all) {
+				document.body.style.behavior = "url(#default#homepage)";
+				document.body.setHomePage(url);
+			} else if (window.sidebar) {
+				if (window.netscape) {
+					try {
+						netscape.security.PrivilegeManager
+								.enablePrivilege("UniversalXPConnect");
+					} catch (e) {
+						alert("您的浏览器不支持自动设置首页,请手动设置.");
+					}
+				}
+				var prefs = Components.classes['@mozilla.org/preferences-service;1']
+						.getService(Components.interfaces.nsIPrefBranch);
+				prefs.setCharPref("browser.startup.homepage", url);
+			} else {
+				alert("您的浏览器不支持自动设置首页,请手动设置.");
+			}
+		}
+	}
+	//收藏
+	function addFavorite() {
+		var url = window.location.href;
+		try {
+			window.external.addFavorite(url, "学分银行");
+		} catch (e) {
+			try {
+				window.sidebar.addPanel("学分银行", url, "");
+			} catch (e) {
+				alert("加入收藏失败,请手动收藏.");
+			}
+		}
+	}
+</script><script type="text/javascript">
+	function change01(){
+		/* window.location.href="http://www.chsi.com.cn/"; */
+		/* window.open('http://www.chsi.com.cn/'); */
+		var cc=document.getElementById("select01").value;
+		if(null==cc||""==cc){
+			return;
+		}
+		window.open(cc);
+	}
+	function change02(){
+		/* window.location.href="http://www.chsi.com.cn/"; */
+		/* window.open('http://www.chsi.com.cn/'); */
+		var cc=document.getElementById("select02").value;
+		if(null==cc||""==cc){
+			return;
+		}
+		window.open(cc);
+	}
+	
+	function change03(){
+		/* window.location.href="http://www.chsi.com.cn/"; */
+		/* window.open('http://www.chsi.com.cn/'); */
+		var cc=document.getElementById("select03").value;
+		if(null==cc||""==cc){
+			return;
+		}
+		window.open(cc);
+	}
+	function change04(){
+		/* window.location.href="http://www.chsi.com.cn/"; */
+		/* window.open('http://www.chsi.com.cn/'); */
+		var cc=document.getElementById("select04").value;
+		if(null==cc||""==cc){
+			return;
+		}
+		window.open(cc);
+	}
+	function getPoat(obj,vkey){
+		var did=$(obj).attr("data-id");
+		var durl=$(obj).attr("data-url");
+		if(vkey=="newsId"){
+			//post1(durl, {newsId :did});
+			window.location.href =durl+"?newsId="+did;
+		}
+		if(vkey=="id"){
+			//post1(durl, {id :did});
+			window.location.href =durl+"?id="+did;
+		}
+	}
+	function post1(URL, PARAMS) {
+	  var temp = document.createElement("form");
+	  temp.action = URL;
+	  temp.method = "post";
+	  temp.target = "_blank";
+	  temp.style.display = "none";
+	  for (var x in PARAMS) {
+	    var opt = document.createElement("textarea");
+	    opt.name = x;
+	    opt.value = PARAMS[x];
+	    temp.appendChild(opt);
+	  }
+	  document.body.appendChild(temp);
+	  temp.submit();
+	  document.body.removeChild(temp);  
+	}
+</script>
+<style type="text/css">
+	/*公告样式*/
+	p, hr, ul, ol, dl, blockquote, pre, address, fieldset, figure {
+	    margin: 0;
+	}
+	
+	ul, ol {
+	    padding: 0;
+	    list-style: none;
+	}
+	
+	a{
+		text-decoration: none;
+	}
+	.mod-meet{
+		width: 1000px;
+		padding-top:30px;
+		margin: 0 auto;
+		padding-left: 10px;
+    	padding-right: 10px;
+	}
+	.mod-meet-lt{
+		margin-right: -28px;
+	}
+	.mod-meet-lt>li {
+	    position: relative;
+	    float: left;
+	    width: 227px;
+	    height: 250px;
+	    margin-right: 20px;
+	    margin-bottom: 28px;
+	    border: 1px solid #efefef;
+	    cursor: pointer;
+	}
+	.mod-meet .mod-meet-lt li>a {
+	    display: block;
+	}
+	.mod-meet-lt .mt-img {
+	    width: 227px;
+	    height: 150px;
+	    overflow: hidden;
+	}
+	.mod-meet-lt .mt-img img {
+	    width: 100%;
+	    height: auto;
+	    min-height: 150px;
+	}
+	.mod-meet .mod-meet-lt .mt-title {
+	    font-size: 14px;
+	    color: #0e90d2;
+	    height: 40px;
+	    margin: 10px 10px 5px;
+	    overflow: hidden;
+	}
+	.mod-meet .mod-meet-lt .mt-info {
+	    margin: 0 10px;
+	    padding-top: 13px;
+	    border-top: 1px solid #ebebeb;
+	    color: #8e8e8e;
+	    overflow: hidden;
+	}
+	.mod-meet .mod-meet-lt .mt-info .info-time {
+	    float: left;
+	}
+	.mod-meet .mod-meet-lt .mt-info .info-city {
+	    float: right;
+	}
+	
+	/*弹出内容样式*/
+	.mod-meet .mod-meet-lt .mt-layer {
+	    position: absolute;
+	    left: 225px;
+	    top: -1px;
+	    min-height: 120px;
+	    width: 240px;
+	    padding: 15px;
+	    background: #fff;
+	    box-shadow: 5px 5px 5px 0 rgba(110,110,110,.3);
+	    border: 1px solid #ECECEC;
+	    z-index: 1000;
+	}
+	.mod-meet .mod-meet-lt .mt-layer .layer-info p {
+	    color: #1d1d1d;
+	    height: 2em;
+	    line-height: 2em;
+	    font-size: 12px;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	}
+	/*第四个移动上去内容要显示的*/
+	.mod-meet .mod-meet-lt li.hover-left .mt-layer {
+	    left: -240px;
+	    box-shadow: -5px 5px 5px 0 rgba(110,110,110,.3);
+	    border: 1px solid #ECECEC;
+	}
+	.mod-meet .mod-meet-lt li.hover-left .mt-layer .layer-jiao {
+	    position: absolute;
+	    left: 240px;
+	    display: inline-block;
+	    width: 0;
+	    height: 0;
+	    border-style: solid;
+	    border-width: 8px 0 8px 8px;
+	    border-color: transparent transparent transparent #fff;
+	}
+	/*三角形*/
+	.mod-meet .mod-meet-lt .mt-layer .layer-jiao {
+	    position: absolute;
+	    left: -8px;
+	    display: inline-block;
+	    width: 0;
+	    height: 0;
+	    border-style: solid;
+	    border-width: 8px 8px 8px 0;
+	    border-color: transparent #fff transparent transparent;
+	}
+	/*显示隐藏*/
+	.hidden{
+		display: none;
+	}
+	/*超出...*/
+	.over-hidden{
+		overflow: hidden;text-overflow: ellipsis;
+	}
+	/*自动换行*/
+	.auto-br{word-wrap: break-word;}
+</style>
+</head>
+<body class="mainbody">
+
+	<script>
+	function clickLogin(obj){
+		$(obj).addClass("clickLogin");
+		$(obj).siblings().removeClass("clickLogin");
+		if($(obj).text() == '企业登录'){
+			$("#EnterState").val("1");
+			$("#fogetType").attr("href","/CBC/login!forgetPassword.htm?fogetType=1");
+		}else{
+			$("#EnterState").val("0");
+			$("#fogetType").attr("href","/CBC/login!forgetPassword.htm?fogetType=0");
+		}
+	};
+	$(function(){
+		$("#indexNavUl").find("li a").each(function(){
+			$(this).on('click',function(){
+				var did=$(this).attr("data-id");
+				var durl=$(this).attr("data-url");
+				window.location.href =durl+"?id="+did;
+			});
+		});
+	});
+	/*function post(URL, PARAMS) {
+	  var temp = document.createElement("form");
+	  temp.action = URL;
+	  temp.method = "post";
+	  temp.style.display = "none";
+	  for (var x in PARAMS) {
+	    var opt = document.createElement("textarea");
+	    opt.name = x;
+	    opt.value = PARAMS[x];
+	    temp.appendChild(opt);
+	  }
+	  document.body.appendChild(temp);
+	  temp.submit();
+	  document.body.removeChild(temp);  
+	}*/
+</script>	
+<style>
+.stateTransitionName{
+	margin-top: 15px;
+    overflow: hidden;
+    width: 100%;
+    float: left;
+}
+
+
+</style>
+<script src="toucss/zhcn/zh_cn.js"></script>
+<!--登录弹出框-->
+<div class="cy_dengluboxbg"></div>
+<div class="cy_denglubox">
+	<form id="loginform" action="/CBC/loginAction!doLogin.htm" method="post">
+		<h1>登录学分银行<span class="closed"><a href="#"><img src="Portal/portalImages/close.png"></a>
+			</span>
+		</h1>
+		<dl class="contentLoginBig">
+			<h3 class="EnterpriseLogin" onclick="clickLogin(this)">企业登录</h3>
+			<input name="state" id="EnterState" type="hidden" value="0">
+			<div class="spacing"></div>
+			<h3 class="PersonalLogin clickLogin" onclick="clickLogin(this)">个人登录</h3>
+			<div class="clearfix"></div>
+		</dl>
+		<dl>
+			 <dd style="border:#dbdbdb 1px solid;"><img src="Portal/portalImages/join-z.png" style="  display:block; float:left; vertical-align: middle;">
+	        <input type="text" id="loginUser" name="userAccount" style=" color:#7f7f7f" class="cy_zhanghao" value="" placeholder="请输入账号或身份证号码">
+	        </dd>
+	        <dd style="border:#dbdbdb 1px solid;"><img src="Portal/portalImages/join-m.png" style="  display:block; float:left;vertical-align: middle; ">
+	        <input type="password" id="pwd" name="password" style=" color:#7f7f7f" class="cy_zhanghao" value="请输入密码" onfocus="if(this.value=='请输入密码'){this.value=''};this.style.color='black';" onblur="if(this.value==''||this.value=='请输入密码'){this.value='请输入密码';this.style.color='#7f7f7f';}">
+	        </dd>
+	       	
+	        <dd>
+	        	<div class="cy_adyzm"><input type="text" name="validateCode" id="validateCode" style=" color:#7f7f7f" class="cy_yanzhengm" value="请输入验证码" onfocus="if(this.value=='请输入验证码'){this.value=''};this.style.color='black';" onblur="if(this.value==''||this.value=='请输入验证码'){this.value='请输入验证码';this.style.color='#7f7f7f';}"></div>
+	        	<div class="cy_djyzm"><label><a href="javascript:;"><img class="join_yz_pic" id="validaImg" src="CBC/smsValidateRecAction!getLoginVal.jpg" title="点击更换验证码"></a></label></div>
+	        <div style="clear:both;"></div>
+	        	<div style="margin:3px 0px;" id="messageError"></div>
+        	</dd>
+		</dl>
+		<div class="cy_login02bt">
+			<a href="CBC/login!loadRegister.html">申请开户</a>
+			<a style="float:right" id="fogetType" href="CBC/login!forgetPassword-0.html">忘记密码?</a> 
+			<input type="submit" value="登录" class="cy_login02btson">
+		</div>
+	</form>
+</div>
+<!--cy_denglubox-->
+<!--登录弹出框end-->
+<div class="indexcontainer">
+	<div class="cy_greybgad">
+	<div class="cy_indextitle">
+		<h1>
+			<img src="Portal/portalImages/indexpic_04.png">
+		</h1>
+		
+		 <div class="cx_public">
+		 	<div class="stateTransition">
+				<select id="sel">		
+					<option value="1" selected="selected">简体中文</option>
+					<option value="2">繁体中文</option>
+				<select>
+			</select></select></div>
+		
+		<!-- <div class="welcom">
+			<a href="javascript:void(0);" onclick="addFavorite();"><img
+				src="Portal/portalImages/index_06.png" /><span>加入收藏</span>
+			</a><a>|</a> <a href="javascript:void(0);" onclick="addHomepage(this);"><img
+				src="Portal/portalImages/indexpic_09.png" /><span>设为首页</span>
+			</a>
+		</div> -->
+		
+					<div class="cx_bottem"><a class="login"></a><a class="signin" href="CBC/login!loadRegister.html"></a> </div>
+			</div>
+	</div>
+	<!--cy_indextitle-->
+	</div>
+	<div class="alter_nav">
+		<div class="cy_indexnav">
+			<ul id="indexNavUl">
+														<li>
+						<a href="javascript:void(0);" data-url="index.htm" data-id="402889fd4c45bf3f014c45d153c10002" class="cy_indexcolor">首页<span>Home</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadSchooleBank.htm" data-id="402889fd4c45bf3f014c45d32cdf0003">学银动态<span>Dynamic</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadPolicyAndAnnouncemet.htm" data-id="402889fd4c45bf3f014c45d377830004">政策与公告<span>Policy&Notice</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadBusinessHanding.htm" data-id="402889fd4c45bf3f014c45d3b5e00005">业务办理<span>Business Handling</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!educationGain.htm" data-id="402889fd4c45bf3f014c45d3fbee0006">标准体系<span>Standard System</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadResourceSupermarket.htm" data-id="402889fd4c45bf3f014c45d439660007">资源超市<span>Resources</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadHelpCenter.htm" data-id="402889fd4c45bf3f014c45d496ae0008">帮助中心<span>Help Center</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!characteristicDisplay.htm" data-id="402889fd4c45bf3f014c45d50d1b0219">特色展示<span>Characteristic</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadAboutUs.htm" data-id="402889fd4c45bf3f014c45d55ae9000a">关于我们<span>AboutUs</span></a>
+					</li> 
+												</ul>
+		</div>
+		<!--cy_indexnav-->
+	</div>	<!--cy_indexnav-->
+		<div class="container">
+	<div class="banner_change">
+
+		<div class="cx_changimg">
+			<div class="cy_indexbanner" id="img_1">
+				<img src="Portal/portalImages/index_img_4.jpg" class="chang_img">
+			</div>
+
+			<div class="cy_indexbanner" style="display:none;" id="img_2">
+				<img src="Portal/portalImages/index_img_3.jpg" class="chang_img">
+			</div>
+
+			<div class="cy_indexbanner" style="display:none;" id="img_3">
+				<img src="Portal/portalImages/index_img_2.jpg" class="chang_img">
+			</div>
+
+			<div class="cy_indexbanner" style="display:none;" id="img_4">
+				<img src="Portal/portalImages/index_img_1.jpg" class="chang_img">
+			</div>
+
+		</div>
+
+		<div class="bot_all">
+			<span class="bot_scend"><i class="fa fa-stop"></i>
+			</span><span class="bot_first"><i class="fa fa-stop"></i>
+			</span><span class="bot_first"><i class="fa fa-stop"></i>
+			</span><span class="bot_first"><i class="fa fa-stop"></i>
+			</span>
+		</div>
+	</div>
+	<!--cy_indexbanner-->
+	<div class="maincontent"><!-- 中间区域开始 -->
+	<div class="cy_indexct">
+		<div class="cy_indexctleft">
+			<a href="javascript:void(0);" data-url="/CBC/login!showNews.htm" data-id="402889fd4c45bf3f014c45d72c29000b" onclick="getPoat(this,'newsId');" target="_Blank">
+			<img class="tit_more" src="Portal/portalImages/5-120605203S0.gif" alt=""></a>
+			<h1>学分银行简介</h1>
+			<h2>Introduction of credit bank</h2>
+			<h3>
+				<img src="Portal/portalImages/cy_99999_03.png">
+			</h3>
+			<div class="cy_indexbt">
+			<h3>一、什么是学分银行？</h3>
+			<p>1.为什么要构建学分银行？<br>&nbsp;&nbsp;&nbsp;&nbsp;构建学分银行是建设重庆市终身教育体系和学习型社会、 满足市民多元化学习需求的需要，是落实国家和重庆市中长期教育改革和发展规划纲要中建立“学分银行”制度、搭建终身学习“立交桥”要求，完善重庆市终身教育体系的有效措施之一。
+					
+				<a href="CBC/login!showNews-402889fd4c45bf3f0.html" target="_Blank">点击查看详情>></a>
+			
+			</p><br>
+			 <!--  <a href="/CBC/login!showNews.htm?newsId=402880e54a010b8b014a012f26c40022" target="_Blank"><p >详情>></p></a> -->
+			<!--  <input type="button" class="cy_indexmore" value="more">-->
+			</div>
+			<!--cy_indexbt-->
+			<div class="cy_indexbt01"></div>
+		</div>
+		<!--cy_indexctleft-->
+
+
+		 <div class="cy_indexctleftat">
+			<a class="tit_more" href="javascript:void(0);" data-url="/CBC/login!loadSchooleBank.htm" data-id="402889fd4c45bf3f014c45d32cdf0003" onclick="getPoat(this,'id');">
+			<img src="Portal/portalImages/5-120605203S0.gif" alt="">
+			</a>
+			<h1>最新新闻公告</h1>
+			<h2>The latest news bulletin</h2>
+			<h3>
+				<img src="Portal/portalImages/indexpic_60.png">
+			</h3>
+			<div class="cy_indexleftext">
+				<div class="new_head" style="width:420px;">
+					<img src="Portal/portalImages/index121_10.png" class="new_pic" style="width:70px;height:70px;">
+					<div class="new_text">
+						<p class="new_tit over-hidden" title="关于开展2021年学分银行试点工作项目申报的通知" style="line-height: 16px;height: 16px;">关于开展2021年学分银行试点工作项目申报的通知</p>
+						<p class="new_con auto-br over-hidden" style="line-height: 16px;height: 30px;">
+							<a href="CBC/login!showNews-8aa981d67691be560.html" target="_Blank">关于开展2021年学分银行试点工作项目申报的通知
+
+
+
+各区县（自治县）电大、电大分校、工作站，行业学院，学校各单位（部门）：
+
+  为贯彻落实《&ldquo;十四五&rdquo;规划和2035年远景目标建议》《教育部职业教育与成人教育司关于做好职业教育国家学分银行建设相关工作的通知》要求，按照《重庆市教育委员会关于加快建设终身学习学分银行及服务体系的意见》《重庆市终身学习学分银行建设工作方案》等文件部署，加快重庆市终身学习学分银行建设，完善终身学习体系，建设学习型社会。学分银行决定开展2021年试点工作项目申报工作。现将有关事宜通知如下：
+
+  一、工作目标
+
+  稳步推进学习成果认证与转换标准体系建设，加快学历教育与非学历教育学习成果登记、认证与转换，深化学校专业（群）、课程、教学资源建设等方面改革，加强校企合作，全面提高人才培养质量。
+
+  二、项目类别
+
+  本次试点工作项目主要包括终身学习建档与非学历教育学习成果综合登记、行业能力标准建设、行业能力标准下的课程建设、非学历教育培训能力标准和资源建设、书证融通建设、学历教育纵向衔接建设。（见附件1）
+
+  三、申报条件与要求
+
+<strong>  （一）申报条件</strong>
+
+  1.所有试点工作项目责任人需具有副高及以上职称或是专业带头人，以确保项目成果转化成效。（不包括终身学习建档与非学历教育学习成果综合登记试点工作项目）
+
+  2.各试点工作项目负责人只能牵头申报一个项目，且不能作为课题组成员参与其他项目的申报，课题组成员最多只能同时参加两个试点工作项目的申报。
+
+  3.试点工作项目申报需经所在学院批准，且最终成果能够纳入当年或次年的人才培养体系中，以保证试点工作项目能够切实、有效推动学校专业人才培养方案、课程体系、教学资源等改革。
+
+<strong>  （二）有下列情况之一的，不接受申报</strong>
+
+  1.已主持同类试点工作项目尚未结题的，不能申报。已经获得学分银行资助的试点工作项目，不得再重复申报。
+
+  2.最近1个年度考核评为不合格的人员。
+
+  3.正在办理调离手续的人员。
+
+  4.凡在试点工作项目申报中弄虚作假者，一经发现并查实后，取消两年申报资格。
+
+<strong>  （三）试点工作项目负责人要切实做好规划，根据学分银行试点工作项目的安排，当年立项的项目要求当年完成，原则上不允许延期。</strong>
+
+  四、申报时间及材料提交要求
+
+  申报截止时间：2021年3月1日。申报者须注意申报时限要求，务必及时申报。
+
+  申报材料要求：申报《终身学习建档与非学历学习成果登记》试点工作项目的请填写附件2，申报其他类型试点工作项目的请填写附件3。申报书名称格式：项目名称-项目类型-项目申报人，将电子版发送到cqxfyh@126.com；纸质原件一式三份，须加盖所在单位（部门）公章，报送学分银行管理中心。
+
+  评审流程：学分银行管理中心组织专家对申报书进行立项评审，并向通过立项评审的项目负责人下达任务通知。
+
+  五、其他事项
+
+  对于试点工作项目申报过程中出现的问题或疑问，建议加入学分银行试点工作项目QQ群：432490492，进行咨询；也可以咨询相关试点工作项目类型负责人。
+
+  各试点工作项目按照实际开展所需经费进行初预算，学分银行根据工作量及财务相关规定进行资助。
+
+  六、联系方式
+
+  联 系 人：黄娥 13062322923
+
+         孙权 13648375845
+
+  联系地址：合川校区励志楼406室
+
+
+
+  附件：1.学分银行试点工作项目类型介绍（2021年）
+
+       2.终身学习建档及非学历成果登记申报书
+
+       3.学分银行试点工作项目申报书
+
+
+
+
+
+                                          重庆市合川广播电视大学-重庆广播电视大学
+
+                                           2020年12月23日
+</a></p>
+					</div>
+				</div>
+				<br>
+					
+				<!-- <div class="new_head">
+										
+					<img src="Portal/portalImages/index121_10.png" class="new_pic" />
+					
+										<div class="new_text">
+						<p class="new_tit">关于开展2021年学分银行试点工作项目申报的通知</p>
+						<p class="new_con">
+							关于开展2021年学分银行试点工作项目申报的通知
+
+
+
+各区县（自治县）电大、电大分校、工作站，行业学院，学校各单位（部门）：
+
+  为贯彻落实《&ldquo;十四五&rdquo;规划和2035年远景目标建议》《教育部职业教育与成人教育司关于做好职业教育国家学分银行建设相关工作的通知》要求，按照《重庆市教育委员会关于加快建设终身学习学分银行及服务体系的意见》《重庆市终身学习学分银行建设工作方案》等文件部署，加快重庆市终身学习学分银行建设，完善终身学习体系，建设学习型社会。学分银行决定开展2021年试点工作项目申报工作。现将有关事宜通知如下：
+
+  一、工作目标
+
+  稳步推进学习成果认证与转换标准体系建设，加快学历教育与非学历教育学习成果登记、认证与转换，深化学校专业（群）、课程、教学资源建设等方面改革，加强校企合作，全面提高人才培养质量。
+
+  二、项目类别
+
+  本次试点工作项目主要包括终身学习建档与非学历教育学习成果综合登记、行业能力标准建设、行业能力标准下的课程建设、非学历教育培训能力标准和资源建设、书证融通建设、学历教育纵向衔接建设。（见附件1）
+
+  三、申报条件与要求
+
+<strong>  （一）申报条件</strong>
+
+  1.所有试点工作项目责任人需具有副高及以上职称或是专业带头人，以确保项目成果转化成效。（不包括终身学习建档与非学历教育学习成果综合登记试点工作项目）
+
+  2.各试点工作项目负责人只能牵头申报一个项目，且不能作为课题组成员参与其他项目的申报，课题组成员最多只能同时参加两个试点工作项目的申报。
+
+  3.试点工作项目申报需经所在学院批准，且最终成果能够纳入当年或次年的人才培养体系中，以保证试点工作项目能够切实、有效推动学校专业人才培养方案、课程体系、教学资源等改革。
+
+<strong>  （二）有下列情况之一的，不接受申报</strong>
+
+  1.已主持同类试点工作项目尚未结题的，不能申报。已经获得学分银行资助的试点工作项目，不得再重复申报。
+
+  2.最近1个年度考核评为不合格的人员。
+
+  3.正在办理调离手续的人员。
+
+  4.凡在试点工作项目申报中弄虚作假者，一经发现并查实后，取消两年申报资格。
+
+<strong>  （三）试点工作项目负责人要切实做好规划，根据学分银行试点工作项目的安排，当年立项的项目要求当年完成，原则上不允许延期。</strong>
+
+  四、申报时间及材料提交要求
+
+  申报截止时间：2021年3月1日。申报者须注意申报时限要求，务必及时申报。
+
+  申报材料要求：申报《终身学习建档与非学历学习成果登记》试点工作项目的请填写附件2，申报其他类型试点工作项目的请填写附件3。申报书名称格式：项目名称-项目类型-项目申报人，将电子版发送到cqxfyh@126.com；纸质原件一式三份，须加盖所在单位（部门）公章，报送学分银行管理中心。
+
+  评审流程：学分银行管理中心组织专家对申报书进行立项评审，并向通过立项评审的项目负责人下达任务通知。
+
+  五、其他事项
+
+  对于试点工作项目申报过程中出现的问题或疑问，建议加入学分银行试点工作项目QQ群：432490492，进行咨询；也可以咨询相关试点工作项目类型负责人。
+
+  各试点工作项目按照实际开展所需经费进行初预算，学分银行根据工作量及财务相关规定进行资助。
+
+  六、联系方式
+
+  联 系 人：黄娥 13062322923
+
+         孙权 13648375845
+
+  联系地址：合川校区励志楼406室
+
+
+
+  附件：1.学分银行试点工作项目类型介绍（2021年）
+
+       2.终身学习建档及非学历成果登记申报书
+
+       3.学分银行试点工作项目申报书
+
+
+
+
+
+                                          重庆市合川广播电视大学-重庆广播电视大学
+
+                                           2020年12月23日
+</p>
+					</div>
+				</div> -->
+				
+								<div class="cy_gonggao">
+				<a href="CBC/login!showNews-8aa981d675f73fb70.html" target="_Blank" style="cursor:pointer;">
+					<p>
+						<font title="关于重庆市终身学习学分银行LOGO设计征集选用结果公告" style="width:270px;line-height: 16px;height: 16px;" class="over-hidden">关于重庆市终身学习学分银行LOGO设计征集选用结果公告</font>
+						<span id="new_hint">2020-11-24<b>公告</b></span>
+					</p>
+				</a>
+				</div> 
+				
+				<div class="new_line"></div> 
+								<div class="cy_gonggao">
+				<a href="CBC/login!showNews-8aa981d674d6dbe60.html" target="_Blank" style="cursor:pointer;">
+					<p>
+						<font title="重庆市终身学习学分银行揭牌仪式暨学分银行建设研讨会在重庆市合川广播电视大学-重庆广播电视大学成功召开" style="width:270px;line-height: 16px;height: 16px;" class="over-hidden">重庆市终身学习学分银行揭牌仪式暨学分银行建设研讨会在重庆市合川广播电视大学-重庆广播电视大学成功召开</font>
+						<span id="new_hint">2020-09-28<b>学银动态</b></span>
+					</p>
+				</a>
+				</div> 
+				
+				<div class="new_line"></div> 
+								<div class="cy_gonggao">
+				<a href="CBC/login!showNews-40287c4b7493e8dd0.html" target="_Blank" style="cursor:pointer;">
+					<p>
+						<font title="重庆市1+X证书学习成果专业认证委员会专家库组成人员公示" style="width:270px;line-height: 16px;height: 16px;" class="over-hidden">重庆市1+X证书学习成果专业认证委员会专家库组成人员公示</font>
+						<span id="new_hint">2020-09-16<b>公告</b></span>
+					</p>
+				</a>
+				</div> 
+				
+				<div class="new_line"></div> 
+								<div class="cy_gonggao">
+				<a href="CBC/login!showNews-40287c4b7493e8dd01.html" target="_Blank" style="cursor:pointer;">
+					<p>
+						<font title="重庆市终身学习学分银行机构分中心拟建设名单公示" style="width:270px;line-height: 16px;height: 16px;" class="over-hidden">重庆市终身学习学分银行机构分中心拟建设名单公示</font>
+						<span id="new_hint">2020-09-16<b>公告</b></span>
+					</p>
+				</a>
+				</div> 
+				
+				<div class="new_line"></div> 
+								<div class="cy_gonggao">
+				<a href="CBC/login!showNews-40287c4b73075f400.html" target="_Blank" style="cursor:pointer;">
+					<p>
+						<font title="成渝地区双城经济圈学分银行签署合作备忘录" style="width:270px;line-height: 16px;height: 16px;" class="over-hidden">成渝地区双城经济圈学分银行签署合作备忘录</font>
+						<span id="new_hint">2020-06-30<b>学银动态</b></span>
+					</p>
+				</a>
+				</div> 
+				
+				<div class="new_line"></div> 
+							</div>
+		<!-- cy_indexleftext -->
+		<!-- 	cy_indexleftext -->
+		</div>
+		<!-- cy_indexctleftat  -->
+
+
+
+	</div>
+	<!--cy_indexct-->
+	<div class="cy_indexct01">
+		<div class="cy_indexctleft">
+			<h1>学分银行标准体系</h1>
+			<h2>Credit bank standard system</h2>
+			<h3>
+				<img src="Portal/portalImages/indexpic_45.png">
+			</h3>
+		</div>
+	</div>
+	<!--cy_indexct01-->
+
+	<div class="cy_indexct02">
+		<div class="cy_cybjbox">
+			<img class="raopai" src="Portal/portalImages/index_45.png">
+			<p>
+				<span>学历教育学习成果</span><br>
+												    <p align="left"><font face="tahoma, arial, verdana, sans-serif"><b>学历教育学习成果主要是指学习者在正规教育体系中有目的、有组织、有计划地在固定机构或场所由专职教学人员对其进行教育，有需要遵循的教学规范和教学时间表，学习过程结束时实施相应的评价与认证，学习成果通过毕业证书或学分的形式表现出来，由学校颁发国家统一印制的毕业证书和学位证...
+							</b></font></p>
+			<br>
+			<a href="CBC/login!educationGain-402889fd4c45.html">学历教育学习成果目录 >></a>
+		</div>
+		<!--cy_cybjbox-->
+
+		<div class="cy_cybjbox02">
+			<img class="raopai" src="Portal/portalImages/index_47.png">
+			<p>
+				<span class="cy_cybjbox02_span2">非学历教育学习成果</span><br>
+												    <p align="left"><span style="font-family: tahoma, arial, verdana, sans-serif;"><b>非学历教育学习成果是指学习者在有组织的教育机构以外所从事的教育活动，它通常是一种有明确的学习目的、有计划的学习活动，主要是指各种培训、进修，研修（如培训班）、驾校、研究生课程班、职（执）业证书（如人力资源管理师、一级建造师、房地产估价师...
+							</b></span></p><br>
+			<a href="CBC/login!collegeCourseMajor-402889f.html">非学历教育学习成果目录 >></a>
+		</div>
+		<!--cy_cybjbox-->
+
+
+		<div class="cy_cybjbox03">
+			<img class="raopai" src="Portal/portalImages/index_50.png">
+			<p>
+				<span> 无定式教育学习成果</span><br>
+												    <p align="left"><font face="tahoma, arial, verdana, sans-serif"><b>无定式教育学习成果大多是伴随学习者的工作、生活（如工作场所、图书馆等环境）而产生的随意性的学习，其成果形式可以表现为经验、能力（如工作经历、技术创新、竞赛奖励等），我们将其独立出来称为“无一定形式教育学习成果”（简称“无定式学习成果”）加以研究和开发。</b></font></p>
+			<br><br>
+			<a href="CBC/login!redirects-402889fd4c45bf3f.html"> 无定式教育学习成果目录 >></a>
+		</div>
+		<!--cy_cybjbox-->
+	</div>
+	<!--cy_indexct02-->
+	
+	
+	<!--cy_indexct-->
+	<!--<div class="cy_indexct01">
+		<div class="cy_indexctleft">
+			<h1>教育产品 </h1>
+			<h2>Credit bank standard system</h2>
+			<h3>
+				<img src="Portal/portalImages/indexpic_45.png" />
+			</h3>
+		</div>
+	</div>-->
+	<!--cy_indexct01-->
+	
+	<div class="mod-meet">
+		<ul class="mod-meet-lt">
+			<!--图片模块内容开始-->
+						<div style="clear: both;"></div>
+		</ul>
+	</div>
+
+	<div class="cy_indexct03">
+
+		<div class="cx_indexctleftat">
+			<h1>常见问题</h1>
+			<h2>Frequently Asked Questions</h2>
+			<h3>
+				<img src="Portal/portalImages/indexpic_62.png">
+			</h3>
+			<div class="cy_indexleftext">
+				<a href="CBC/login!loadMajorFlowPrent-1.html" class="faq_pr"><img src="Portal/portalImages/questions_1.png" style="vertical-align:middle;">如何申请开户</a>
+				<div class="new_line2"></div>
+				<a href="CBC/login!loadMajorFlowPrent-2.html" class="faq_pr"><img src="Portal/portalImages/questions_2.png" style="vertical-align:middle;">如何鉴定学分</a>
+				<div class="new_line2"></div>
+				<a href="CBC/login!loadMajorFlowPrent-3.html" class="faq_pr"><img src="Portal/portalImages/questions_3.png" style="vertical-align:middle;">如何存入学分</a>
+				<div class="new_line2"></div>
+				<a href="CBC/login!loadMajorFlowPrent-4.html" class="faq_pr"><img src="Portal/portalImages/questions_4.png" style="vertical-align:middle;">如何使用学分</a>
+				<div class="new_line2"></div>
+				<!--<input type="button" class="cy_indexmore" value="more"> 方法测试用 -->
+				<!--<a href="/CBC/catalogAction!load.action"> Text </a>-->
+			</div>
+			<!--cy_indexleftext-->
+		</div>
+		<!--cy_indexctleftat-->
+
+		<div class="cy_indexctleftat02">
+			<h1>学分银行分布图</h1>
+			<h2>Credit bank distribution</h2>
+			<h3>
+				<img src="Portal/portalImages/indexpic_62.png">
+			</h3>
+			<img src="Portal/portalImages/indexpic_67.png">
+		</div>
+		<!--cy_indexctleftat-->
+
+		<div class="cy_indexctleftat03">
+			<h1>最新链接</h1>
+			<h2>Links</h2>
+			<h3>
+				<img src="Portal/portalImages/indexpic_62.png">
+			</h3>
+			<select id="select01" onchange="change01()">
+				<option value="">中国高等教育学生信息网（学信网）</option>
+				<option value="http://www.chsi.com.cn/">中国高等教育学生信息网（学信网）</option>
+			</select> 
+			<select id="select02" onchange="change02()">
+				<option value="">重庆市终身学习学分银行</option>
+				<option value="http://www.cqdd.cq.cn/">重庆市终身学习学分银行</option>
+				<option value="http://www.cqtbi.edu.cn/">重庆工商职业学院</option>
+			</select>
+			 <select id="select03" onchange="change03()">
+				<option value="">国家开放大学学分银行</option>
+				<option value="http://cbouc.ouchn.edu.cn/gkcms/wwwroot/cbank2"></option>国家开放大学学分银行
+			</select> 
+			<select id="select04" onchange="change04()">
+				<option value="">上海市终身教育学分银行</option>
+				<option value="http://www.shcb.org.cn/">上海市终身教育学分银行</option>
+				<option value="http://cai.jstvu.edu.cn/c_bank_new/Default.aspx">江苏省终身教育学分银行</option>
+			</select>
+		</div>
+		
+	</div><!-- 中间区域结束 -->
+		<!--cy_indexctleftat-->
+	</div>
+	<!--cy_indexct03-->
+	<div class="cy_indexfooter">
+	<div class="cy_indexfooter01">
+    	<img src="Portal/portalImages/indexpic_04.png">
+       <p>重庆市终身学习学分银行管理中心 TEL:17302331697 地址：重庆市九龙坡区华龙大道1号<br>
+       <span>Copyright ©&nbsp;</span>版权所有 重庆市终身学习学分银行&nbsp;。&nbsp;<img src="Portal/portalImages/icon-police.png" style="float: initial; padding-top: 0px;">渝ICP备05003321</p>
+    </div>
+</div>
+</div> <!--indexcontainer--> 
+<script type="text/javascript" src="Portal/ziqiu/websocket/websocket.js"></script>
+<script type="text/javascript">
+	if(''!=''){
+	 	socket("");
+	 }
+</script>	</div>
+	
+	<script type="text/javascript">
+	$(".mod-meet-lt").find("li").mouseout(function (){
+		$(this).find(".mt-layer").addClass("hidden")
+	})
+	$(".mod-meet-lt").find("li").mouseover(function (){
+		$(this).find(".mt-layer").removeClass("hidden")
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link href="../Portal/portalCss/indexpublic.css" rel="stylesheet" type="text/css">
+<link href="../Portal/portalCss/shanghaindex.css" rel="stylesheet" type="text/css">
+<link href="../Portal/portalCss/cx-css.css" rel="stylesheet" type="text/css">
+<link href="../Portal/portalCss/font-awesome.css" rel="stylesheet" type="text/css">
+<!-- jquery 应先于bootstrap引用 -->
+<script src="../easyui/jquery-2.1.1.min.js"></script>
+<script src="../easyui/jquery-migrate-1.1.1.min.js"></script>
+<!-- bootstrap 引用 -->
+<!-- bootstrap css 会与原有样式冲突 -->
+<!--<link href="Portal/ziqiu/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">-->
+<script type="text/javascript" src="../Portal/ziqiu/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="../Portal/js/shanghaiind.js"></script>
+<script src="../Portal/DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../Portal/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../Portal/js/login.js"></script>
+<script src="../Portal/js/Roll.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".item:odd").addClass("lbg");
+	})
+</script>
+<script type="text/javascript">
+	$(function() {
+		$(".loginbt").hover(function() {
+			$(".loginbox").show();
+			$(".loginbox").mouseleave(function() {
+				$(this).hide();
+			});
+
+		})
+	});
+</script>
+<script type="text/javascript">
+	$(function() {
+		var settime;
+		$("#scrollbar").hover(function() {
+			clearInterval(settime);
+		}, function() {
+			settime = setInterval(function() {
+				var ul_first = $("#scrollbar ul:first");
+				var height = ul_first.find("li:first").height();
+				ul_first.animate({
+					marginTop : -height + "px"
+				}, 600, function() {
+					ul_first.css({
+						marginTop : 0
+					}).find("li:first").appendTo(ul_first);
+				});
+			}, 3000);
+		}).trigger("mouseleave");
+	});
+</script>
+<!-- 收藏和设为主页 -->
+<script type="text/javascript">
+	function showLogin() {
+		$(".cy_denglubox").show();
+		$(".cy_dengluboxbg").show();
+		$(".indexcontainer").css("position", "relative");
+		$(".indexcontainer").css("z-index", "-5");
+		document.documentElement.scrollTop = document.body.scrollTop =0;
+	}
+
+	//设置主页
+	function addHomepage(obj) {
+		var url = window.location.href;
+		try {
+			obj.style.behavior = "url(#default#homepage)";
+			obj.sethomepage(url);
+		} catch (e) {
+			if (document.all) {
+				document.body.style.behavior = "url(#default#homepage)";
+				document.body.setHomePage(url);
+			} else if (window.sidebar) {
+				if (window.netscape) {
+					try {
+						netscape.security.PrivilegeManager
+								.enablePrivilege("UniversalXPConnect");
+					} catch (e) {
+						alert("您的浏览器不支持自动设置首页,请手动设置.");
+					}
+				}
+				var prefs = Components.classes['@mozilla.org/preferences-service;1']
+						.getService(Components.interfaces.nsIPrefBranch);
+				prefs.setCharPref("browser.startup.homepage", url);
+			} else {
+				alert("您的浏览器不支持自动设置首页,请手动设置.");
+			}
+		}
+	}
+	//收藏
+	function addFavorite() {
+		var url = window.location.href;
+		try {
+			window.external.addFavorite(url, "学分银行");
+		} catch (e) {
+			try {
+				window.sidebar.addPanel("学分银行", url, "");
+			} catch (e) {
+				alert("加入收藏失败,请手动收藏.");
+			}
+		}
+	}
+</script><title>重庆市终身学习学分银行-学分银行</title>
+</head>
+<body class="mainbody">
+<!--公共样式头部-->
+<script>
+	function clickLogin(obj){
+		$(obj).addClass("clickLogin");
+		$(obj).siblings().removeClass("clickLogin");
+		if($(obj).text() == '企业登录'){
+			$("#EnterState").val("1");
+			$("#fogetType").attr("href","/CBC/login!forgetPassword.htm?fogetType=1");
+		}else{
+			$("#EnterState").val("0");
+			$("#fogetType").attr("href","/CBC/login!forgetPassword.htm?fogetType=0");
+		}
+	};
+	$(function(){
+		$("#indexNavUl").find("li a").each(function(){
+			$(this).on('click',function(){
+				var did=$(this).attr("data-id");
+				var durl=$(this).attr("data-url");
+				window.location.href =durl+"?id="+did;
+			});
+		});
+	});
+	/*function post(URL, PARAMS) {
+	  var temp = document.createElement("form");
+	  temp.action = URL;
+	  temp.method = "post";
+	  temp.style.display = "none";
+	  for (var x in PARAMS) {
+	    var opt = document.createElement("textarea");
+	    opt.name = x;
+	    opt.value = PARAMS[x];
+	    temp.appendChild(opt);
+	  }
+	  document.body.appendChild(temp);
+	  temp.submit();
+	  document.body.removeChild(temp);  
+	}*/
+</script>	
+<style>
+.stateTransitionName{
+	margin-top: 15px;
+    overflow: hidden;
+    width: 100%;
+    float: left;
+}
+
+
+</style>
+<script src="../toucss/zhcn/zh_cn.js"></script>
+<!--登录弹出框-->
+<div class="cy_dengluboxbg"></div>
+<div class="cy_denglubox">
+	<form id="loginform" action="/CBC/loginAction!doLogin.htm" method="post">
+		<h1>登录学分银行<span class="closed"><a href="#"><img src="../Portal/portalImages/close.png"></a>
+			</span>
+		</h1>
+		<dl class="contentLoginBig">
+			<h3 class="EnterpriseLogin" onclick="clickLogin(this)">企业登录</h3>
+			<input name="state" id="EnterState" type="hidden" value="0">
+			<div class="spacing"></div>
+			<h3 class="PersonalLogin clickLogin" onclick="clickLogin(this)">个人登录</h3>
+			<div class="clearfix"></div>
+		</dl>
+		<dl>
+			 <dd style="border:#dbdbdb 1px solid;"><img src="../Portal/portalImages/join-z.png" style="  display:block; float:left; vertical-align: middle;">
+	        <input type="text" id="loginUser" name="userAccount" style=" color:#7f7f7f" class="cy_zhanghao" value="" placeholder="请输入账号或身份证号码">
+	        </dd>
+	        <dd style="border:#dbdbdb 1px solid;"><img src="../Portal/portalImages/join-m.png" style="  display:block; float:left;vertical-align: middle; ">
+	        <input type="password" id="pwd" name="password" style=" color:#7f7f7f" class="cy_zhanghao" value="请输入密码" onfocus="if(this.value=='请输入密码'){this.value=''};this.style.color='black';" onblur="if(this.value==''||this.value=='请输入密码'){this.value='请输入密码';this.style.color='#7f7f7f';}">
+	        </dd>
+	       	
+	        <dd>
+	        	<div class="cy_adyzm"><input type="text" name="validateCode" id="validateCode" style=" color:#7f7f7f" class="cy_yanzhengm" value="请输入验证码" onfocus="if(this.value=='请输入验证码'){this.value=''};this.style.color='black';" onblur="if(this.value==''||this.value=='请输入验证码'){this.value='请输入验证码';this.style.color='#7f7f7f';}"></div>
+	        	<div class="cy_djyzm"><label><a href="javascript:;"><img class="join_yz_pic" id="validaImg" src="smsValidateRecAction!getLoginVal.jpg" title="点击更换验证码"></a></label></div>
+	        <div style="clear:both;"></div>
+	        	<div style="margin:3px 0px;" id="messageError"></div>
+        	</dd>
+		</dl>
+		<div class="cy_login02bt">
+			<a href="login!loadRegister.html">申请开户</a>
+			<a style="float:right" id="fogetType" href="login!forgetPassword-0.html">忘记密码?</a> 
+			<input type="submit" value="登录" class="cy_login02btson">
+		</div>
+	</form>
+</div>
+<!--cy_denglubox-->
+<!--登录弹出框end-->
+<div class="indexcontainer">
+	<div class="cy_greybgad">
+	<div class="cy_indextitle">
+		<h1>
+			<img src="../Portal/portalImages/indexpic_04.png">
+		</h1>
+		
+		 <div class="cx_public">
+		 	<div class="stateTransition">
+				<select id="sel">		
+					<option value="1" selected="selected">简体中文</option>
+					<option value="2">繁体中文</option>
+				<select>
+			</select></select></div>
+		
+		<!-- <div class="welcom">
+			<a href="javascript:void(0);" onclick="addFavorite();"><img
+				src="Portal/portalImages/index_06.png" /><span>加入收藏</span>
+			</a><a>|</a> <a href="javascript:void(0);" onclick="addHomepage(this);"><img
+				src="Portal/portalImages/indexpic_09.png" /><span>设为首页</span>
+			</a>
+		</div> -->
+		
+					<div class="cx_bottem"><a class="login"></a><a class="signin" href="login!loadRegister.html"></a> </div>
+			</div>
+	</div>
+	<!--cy_indextitle-->
+	</div>
+	<div class="alter_nav">
+		<div class="cy_indexnav">
+			<ul id="indexNavUl">
+														<li>
+						<a href="javascript:void(0);" data-url="index.htm" data-id="402889fd4c45bf3f014c45d153c10002" class="cy_indexcolor">首页<span>Home</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadSchooleBank.htm" data-id="402889fd4c45bf3f014c45d32cdf0003">学银动态<span>Dynamic</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadPolicyAndAnnouncemet.htm" data-id="402889fd4c45bf3f014c45d377830004">政策与公告<span>Policy&Notice</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadBusinessHanding.htm" data-id="402889fd4c45bf3f014c45d3b5e00005">业务办理<span>Business Handling</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!educationGain.htm" data-id="402889fd4c45bf3f014c45d3fbee0006">标准体系<span>Standard System</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadResourceSupermarket.htm" data-id="402889fd4c45bf3f014c45d439660007">资源超市<span>Resources</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadHelpCenter.htm" data-id="402889fd4c45bf3f014c45d496ae0008">帮助中心<span>Help Center</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!characteristicDisplay.htm" data-id="402889fd4c45bf3f014c45d50d1b0219">特色展示<span>Characteristic</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadAboutUs.htm" data-id="402889fd4c45bf3f014c45d55ae9000a">关于我们<span>AboutUs</span></a>
+					</li> 
+												</ul>
+		</div>
+		<!--cy_indexnav-->
+	</div><div class="cy_zhucebaner">
+ <!--    <div class="cy_loginbg">
+		<a href="Register.vm"><div class="cy_indexzc"><p>注册</p></div></a>
+    	<a href="#"><div class="cy_indexdl"><p>登录</p></div></a>
+    	
+
+    </div> -->
+</div><!--cy_indexbanner-->
+<div class="container">
+<!--main-->
+<div class="main">
+<dl class="main_nav">
+<dd id="main_nav_title"><a>学习流程</a></dd>
+<dd class="bbo">
+<div class="nv_bo"><a href="login!loadMajorFlowPrent-1.html">如何申请开户</a></div>
+<div class="nv_bo"><a href="login!loadMajorFlowPrent-2.html">如何认定学分</a></div>
+
+<div id="spicel"><a href="">如何存入学分</a></div>
+
+<div class="nv_bo"><a href="login!loadMajorFlowPrent-4.html">如何使用学分</a></div>
+<dd class="bbo">
+</dd></dl>
+
+
+<div class="main_container">
+<div class="main_container_t">如何存入学分</div>
+<div class="m_title">1.个别存入</div>
+<p>（1）学历教育成绩存入：学习者可在学分银行网站提交成绩存入申请，持学历教育成绩证明原件到学分银行分部办理存入手续，经学分银行认定后的成绩存入学分银行。</p>
+<p>（2）职业培训等证书存入：职业培训等证书经学分银行认证进入学分银行职业培训等证书目录。学习者获得该目录中的证书，可在学分银行网站提交证书存入申请，持证书原件到学分银行分部办理存入手续，经学分银行认定后的证书存入学分银行。</p>
+<img class="imp_pic" src="Portal/portalImages/flow03.png">
+<div class="m_title">2.集中存入</div>
+<p>（1）学历教育和职业培训学习成果的集中存入：学分银行高校网点等办学机构将本校学习者的学习成果集中存入学分银行；学习者在学分银行开户后才能使用集中存入的学习成果信息。</p>
+<p>（2）文化休闲教育学习成果的集中存入：各区县社区学院、老年大学申报的文化休闲教育学习项目（课程、学习活动），经学分银行认证进入学分银行文化休闲教育学习项目目录。学习者学习该目录中的项目，所获得的学分由所在区县社区学院、老年大学统一存入学分银行。</p>
+<img class="imp_pic" src="Portal/portalImages/flow04.png" style="width:750px;">
+</div>
+
+
+
+</div>
+<!--main-->
+</div>
+<div class="cy_indexfooter">
+	<div class="cy_indexfooter01">
+    	<img src="../Portal/portalImages/indexpic_04.png">
+       <p>重庆市终身学习学分银行管理中心 TEL:17302331697 地址：重庆市九龙坡区华龙大道1号<br>
+       <span>Copyright ©&nbsp;</span>版权所有 重庆市终身学习学分银行&nbsp;。&nbsp;<img src="../Portal/portalImages/icon-police.png" style="float: initial; padding-top: 0px;">渝ICP备05003321</p>
+    </div>
+</div>
+</div> <!--indexcontainer--> 
+<script type="text/javascript" src="../Portal/ziqiu/websocket/websocket.js"></script>
+<script type="text/javascript">
+	if(''!=''){
+	 	socket("");
+	 }
+</script>
+</body>
+</html>

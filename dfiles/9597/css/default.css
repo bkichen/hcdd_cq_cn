@@ -1,0 +1,50 @@
+
+/***** 全局样式 Global-Style *****/
+*						{margin: 0; padding: 0;}
+html,body				{margin: 0; font: 12px/160%,"宋体"; background: #fff url(../imagesv2/bg.jpg) center top no-repeat;}
+form,ul,li,dl,dt,dd		{margin: 0; padding: 0; list-style: none;}
+img						{border:none;}
+
+/***** 全局链接 Global-Link-Style *****/
+a			{color: #606163; font-size:12px; text-decoration: none;}
+a:hover		{color: #ff0000;}
+
+/***** 水平居中 *****/
+.cen{ margin:0 auto;}
+
+/***** 清除浮动 *****/
+.clear{ clear:both;}
+
+
+/***** 公用头部 *****/
+  /***** js *****/ 
+  .banner1          { width:100%; height:200px; text-align:center;}
+
+
+  .top01    { position:absolute; top:0; width:100%; height:110px; background:url(../imagesv2/bg_top1.png) top left repeat-x; z-index:999;}
+  .top011  { width:1004px; height:106px;}
+  .logo        { width:346px;}
+
+ /***** 一级导航 *****/
+  .nav { font:bold 14px/106px "Microsoft YaHei"; color:#010101; text-align:center;}
+  .nav a      { width:94px; height:106px; font:bold 14px/106px "Microsoft YaHei"; color:#010101; display:block;}
+  .nav a:hover{ font:bold 14px/106px "Microsoft YaHei"; color:#ffffff; background:url(../imagesv2/nav_hot.gif) left center repeat-x;}
+
+
+
+
+  
+
+
+
+/***** 底部版权 *****/
+.help          { width:100%; height:45px; background:#3e3e3e; text-align:center; font:12px/45px "宋体"; color:#fff; margin-top:8px;}
+.help a        { font:12px/45px "宋体"; color:#fff;}
+.help a:visited{ color:#fff;}
+.help a:hover  { color:#ff0000;}
+
+.copyright                { width:100%; height:150px; background:#5a5a5a; text-align:center;}
+.copyright2               { width:1004px; height:150px; text-align:center;}
+.copyright2        { font:12px/20px "宋体"; color:#e6e4e4; text-align:center;}
+.copyright2 a      { font:12px/20px "宋体"; color:#e6e4e4;}
+.copyright2 a:hover{ color:#ff0000;}

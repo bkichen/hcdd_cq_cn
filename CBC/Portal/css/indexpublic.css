@@ -1,0 +1,61 @@
+
+/* CSS Document */
+*{padding:0px;margin:0px;font-family:"微软雅黑";font-size:12px;}
+a{text-decoration:none;}
+li{list-style:none;}
+img{border:none;}
+input{ cursor:pointer;border:none; outline:none;}
+select{ outline:none;}
+body{background:#FFF;}
+/*公共样式头部*/
+.cy_indextitle{width:1000px;height:81px;margin:0 auto;}
+.cy_indextitle h1{display:block;float:left;padding-top:20px;}
+.cy_indextitle01{float:right;width:200px;height:35px;background:url(../images/cy_titlebg_03.png) no-repeat;
+margin-top:35px;} 
+.cy_indextitle01 a{text-align:center;line-height:35px;padding-left:15px;color:#666666;}
+.cy_indextitle01 a span{padding-left:6px;paddng-right:10px;color:#666666;}
+.cy_indexnav{
+	width: 1000px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.cy_indexnav ul li{float:left;width:111px;height:50px;}
+.cy_indexnav ul li a{display:block;width:110px;height:50px;text-align:center;line-height:50px;
+color:#fff;font-size:16px;}
+.cy_indexnav ul li .cy_indexcolor{background:url(../images/nav-c.png);color:#FFF;}
+.cy_indexnav ul li a:hover{background:url(../images/nav-c.png);color:#FFF;}
+
+.main {
+    min-height: 800px;
+}
+/*公共样式尾部*/
+.cy_indexfooter{background:#0e8ccc;}
+.cy_indexfooter01{width:980px;overflow:hidden;margin:0 auto;margin-top:35px;}
+.cy_indexfooter01 img{float:left;padding-top:16px; padding-top:30px;padding-bottom:30px;}
+.cy_indexfooter01 p{float:left;color:#FFF; font-family:"宋体"; line-height:23px;padding-left:69px;padding-top:35px;padding-bottom:35px;}
+.cy_indexfooter01 span{ font-family:"Arial";}
+.alter_nav{background:url(../images/nav-b.png);}
+
+.signin,.login,.logout{cursor:pointer;}
+.signin{ background:url(../portalImages/s_031.png) no-repeat; display:block; width:65px; height:27px; float:right; margin-right:36px;}
+.login{ background:url(../portalImages/s_05.png) no-repeat; display:block; width:65px; height:27px; float:right; margin-left:17px;}
+.cx_public{float:right; width:200px;}
+.cx_bottem{margin-top:20px; overflow:hidden;width: 100%;float: left;}
+.stateTransition{width: 100%;}
+.stateTransition select {float: right;}
+.welcom{width:200px;height:34px;background:url(../images/cy_titlebg_03.png) no-repeat;} 
+.welcom a{text-align:center;line-height:35px;padding-left:15px;color:#66666;}
+.welcom a span{padding-left:6px;paddng-right:10px;color:#666666; }
+.cx_bottem_out{margin-top:20px; overflow:hidden;}
+.logout{
+	background: url(../portalImages/qq_06.png) no-repeat;
+	display: block;
+	width: 65px;
+	height: 27px;
+	float: right;
+	margin-left: 15px;
+}
+.portrait{float:left; padding-left:5px;}
+.head_portrait{float:left;}
+.head_name{float:left; line-height:23px; font-size:14px; color:#626465; margin-left:5px;}

@@ -1,0 +1,201 @@
+
+.search
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+.search .list_box
+{
+  display:block;
+}
+.search .down
+{
+    margin: 12px 0 0 30px;
+    width: 799px;
+}
+.search .down .le
+{
+    width: 10px;
+    height: 28px;
+    font-size: 0;
+    background: url(http://elib.cqdd.cq.cn/ShangYeYd_Library/WebUI/images/down_le.png) no-repeat;
+}
+.search .down .ri
+{
+    width: 10px;
+    height: 28px;
+    font-size: 0;
+    background: url(http://elib.cqdd.cq.cn/ShangYeYd_Library/WebUI/images/down_ri.png) no-repeat;
+}
+.search .down .ce
+{
+    height: 28px;
+    background: url(http://elib.cqdd.cq.cn/ShangYeYd_Library/WebUI/images/down_ce.png) repeat-x;
+    position:relative;
+}
+.search .down .ce a
+{
+    font: normal 13px/28px "微软雅黑";
+    color: #fff;
+    float: left;
+    margin: 0 10px;
+    min-width:10px;
+}
+
+.search .down1
+{
+    overflow: hidden;
+    margin: 12px 0 0 30px;
+    width: 799px;
+    float:left;
+}
+.search .down1 .le
+{
+    width: 10px;
+    height: 28px;
+    font-size: 0;
+    background: url(http://elib.cqdd.cq.cn/ShangYeYd_Library/WebUI/images/down_le.png) no-repeat;
+}
+.search .down1 .ri
+{
+    width: 10px;
+    height: 28px;
+    font-size: 0;
+    background: url(http://elib.cqdd.cq.cn/ShangYeYd_Library/WebUI/images/down_ri.png) no-repeat;
+}
+.search .down1 .ce
+{
+    height: 28px;
+    background: url(http://elib.cqdd.cq.cn/ShangYeYd_Library/WebUI/images/down_ce.png) repeat-x;
+    overflow: hidden;
+}
+.search .down1 .ce a
+{
+    font: normal 16px/28px "微软雅黑";
+    color: #fff;
+    float: left;
+    margin: 0 10px;
+}
+
+.search .list_box .list
+{
+    padding-left: 10px;
+    overflow: hidden;
+    width:500px;
+    
+}
+.search .list_box .list a
+{
+    display: block;
+    font: normal 16px/30px "微软雅黑";
+    padding-left: 10px;
+    padding-right: 10px;
+   margin-right:30px;
+    color: #fff;
+    float: left;
+}
+.search .list_box .list a:hover, .search .list .e
+{
+    /*border-bottom: 4px solid #fff;*/
+     background: #53488E;
+}
+.search .list_box .list i
+{
+    font: oblique 16px/38px "微软雅黑";
+    color: #fff;
+    float: left;
+    margin: 0 14px;
+}
+.search .kuang
+{
+    margin: 8px 0 0 0;
+    width: 910px;
+}
+.search .kuang .left
+{
+    display:none;
+    width: 28px;
+    height: 46px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-radius: 23px 0px 0px 23px;
+   /* background: url(index/search_left.png) no-repeat;*/
+}
+.search .kuang .bor
+{
+    width: 805px;
+    height: 66px;
+    border-top:5px solid rgba(0,0,0,0.28);
+    border-left:5px solid rgba(0,0,0,0.28);
+    border-bottom:5px solid rgba(0,0,0,0.28);
+    
+}
+.author
+{
+    position: relative;
+    background:#fff;
+}
+.author_down
+{
+    width: 100px;
+    position: absolute;
+    left: 0;
+    top: 56px;
+    border: 2px solid #ffffff;
+    background-color: #8c8c96;
+    z-index: 999;
+}
+.author_down a
+{
+    display: inline-block;
+    width: 83px;
+    text-align: center;
+    font: normal 16px/60px "宋体";
+    color: #fff;
+}
+.author_down .e1
+{
+    color: #16305e;
+}
+.author_down a:hover
+{
+    color: #16305e;
+}
+.author span
+{
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    height: 66px;
+    font: normal 16px/66px "宋体";
+    color: #fff;
+    background: url(../img/jiantou.png) no-repeat right;
+    color:#484848;
+    
+}
+.search .kuang .bor input
+{
+    width: 685px;
+    height: 66px;
+    padding-left:20px;
+    /* margin: 5px 0 0 46px; */
+    font: normal 16px/76px "宋体";
+    color: #949494;
+    background:#fff;
+}
+.search .kuang .right
+{
+   width: 96px;
+    height: 76px;
+   border:1px solid #7d6767;
+    background:#53488E;
+ 
+}
+.search .kuang .right input
+{
+    width: 96px;
+    height: 76px;
+    cursor: pointer;
+    background: url(../img/sreach.png) no-repeat center center;
+}

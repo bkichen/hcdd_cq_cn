@@ -1,0 +1,103 @@
+BODY {
+	background:#FFFFFF;
+	MARGIN: 0px 0px 3px;
+	background:url(../images/bodybg.gif);
+	background-position:center top; background-repeat:repeat-x
+} 
+A:link {
+	COLOR: #333333;
+	TEXT-DECORATION:none
+}
+A:visited {
+	COLOR: #333333;
+	TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0059c2;
+	TEXT-DECORATION:none
+}
+A:active {
+	COLOR: #333333;
+	TEXT-DECORATION:none
+}
+
+
+/*--字体体样式--*/
+.h1{
+	color:#ffffff;
+	font-size:12px;
+	font-weight:bold;
+}
+.h2{
+	color:#000000;
+	font-size:12px;
+	font-weight:bold;
+}
+.h3{
+	color:#006600;
+	font-size:14px;
+	font-weight:bold;
+}
+.h4{
+	color:#ffffff;
+	font-size:14px;
+	font-weight:bold;
+}
+.h5{
+	color:#000000;
+	font-size:14px;
+	font-weight:bold;
+}
+.lanse12x{
+	color:#06477f;
+	font-size:12px;
+	line-height:24px;
+}
+.lvse12x{
+	color:#4a980e;
+	font-size:12px;
+	line-height:24px;
+}
+.baise12x{
+	color:#ffffff;
+	font-size:12px;
+	line-height:24px;
+}
+.heise12x{
+	color:#333333;
+	font-size:12px;
+	line-height:24px;
+}
+.heise14x{
+	color:#333333;
+	font-size:14px;
+}
+
+
+
+/*--窗体样式--*/
+.endtable{
+	border-top:#234c96 5px;
+	background:#e9f4f8;
+	font-size:12px;
+	color:#666666;
+	line-height:24px;
+}
+.centerbody{
+	width:100%px;
+	margin:auto;
+	background:url(../images/bodybg2.gif);
+	background-position:center top; 
+	background-repeat:repeat-y;
+}
+.dtlanse{
+	border-bottom:#234c96 1px solid;
+}
+.dthuise{
+	border-bottom:#c7c7c7 1px solid;
+}
+/*--表格样式--*/
+.tablea{ border:#a6d4f4 1px solid}
+.tableb{ border:#cccccc 1px solid}
+.tablec{ border-bottom:#a0d0ff 1px solid;border-left:#e0e0e0 1px solid;border-right:#e0e0e0 1px solid;}
+.tabled{ border-top:#a0d0ff 1px solid;border-left:#a0d0ff 1px solid;border-right:#a0d0ff 1px solid;}

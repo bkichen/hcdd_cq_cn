@@ -1,0 +1,55 @@
+
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+
+DIV {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BACKGROUND-COLOR: #fff; BORDER-RIGHT-WIDTH: 0px
+}
+
+
+.t_1 {
+	PADDING-RIGHT: 20px; BACKGROUND-POSITION: 2px 40%; PADDING-LEFT: 2px; PADDING-top: 10px; FONT-WEIGHT: bolder; FONT-SIZE: 12px; FLOAT: left;  VERTICAL-ALIGN: middle; COLOR: #0000; LINE-HEIGHT: 30px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 30px
+}
+
+
+
+#zyzt {
+	BORDER-RIGHT: #bbbbbb 1px solid; BORDER-TOP: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid; WIDTH:340px; BORDER-BOTTOM: #bbbbbb 1px solid; HEIGHT:160px
+}
+.zyzt_t_r {
+	PADDING-RIGHT: 5px; PADDING-BOTTOM: 0px; WIDTH: 78px; HEIGHT: 25px
+}
+.zyzt_ul {
+	CLEAR: both; DISPLAY: inline; FLOAT: left; MARGIN: 1px 0px 0px 1px; WIDTH: 195px
+}
+.zyzt_ul1 {
+	CLEAR: right; DISPLAY: inline; FLOAT: left; MARGIN: 10px 0px 0px 10px; WIDTH: 195px
+}
+
+
+
+.tab_ul {
+	PADDING-TOP: 5px
+}
+.tb_r {
+	FONT-SIZE: 12px; FLOAT: right; COLOR: #999; LINE-HEIGHT: 25px; BORDER-BOTTOM: #b3c9d7 1px solid; TEXT-ALIGN: right
+}
+.tb_r A {
+	FONT-SIZE: 12px; COLOR: #999
+}
+.tbtncon A {
+	COLOR: #07519a
+}
+.tbtncon LI {
+	PADDING-RIGHT: 10px; DISPLAY: block; PADDING-LEFT: 5px; FLOAT: left; CURSOR: pointer; COLOR: #07519a; LINE-HEIGHT: 25px; BORDER-BOTTOM: #b3c9d7 1px solid; HEIGHT: 25px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.tbtncon LI:hover {
+	TEXT-DECORATION: underline
+}
+.tbtncon LI.curr {
+	BORDER-RIGHT: #b3c9d7 1px solid; BORDER-TOP: #b3c9d7 1px solid; BACKGROUND: #fff; BORDER-BOTTOM-COLOR: #fff; BORDER-LEFT: #b3c9d7 1px solid; CURSOR: default; LINE-HEIGHT: 24px; HEIGHT: 24px
+}

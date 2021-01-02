@@ -1,0 +1,51 @@
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+img {
+    border: none;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black
+}
+a:hover {
+    cursor: pointer;
+    text-decoration: none !important
+}
+.clear {
+    clear: both;
+    overflow: hidden;
+    height: 0px;
+}
+.fr {
+    float: right;
+}
+.mb0 {
+    margin-bottom: 0px !important
+}
+
+.link{
+    float: right;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 0
+}
+.link:hover {
+    text-decoration: none;
+    color: #007a53;
+
+}
+.tr {
+    text-align: right
+}
+.notop{
+    margin-top: 0 !important;
+    padding-top: 0 !important
+}

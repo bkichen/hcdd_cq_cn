@@ -1,0 +1,609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>怀旧版-重庆市合川广播电视大学-重庆广播电视大学图书馆</title><meta name="keywords" content="重庆市合川广播电视大学-重庆广播电视大学图书馆">
+
+<link href="dfiles/9597/elib/css/video-js.css" rel="stylesheet" type="text/css">
+<link href="dfiles/9597/elib/css/css.css" rel="stylesheet" type="text/css">
+<link href="dfiles/9597/elib/images/skin.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.fdbox{width:180px; height:250px; margin:0px; border:0px solid #ccc; background:#eee; padding:0px; position:absolute; margin-top:156px; left:230px;}
+.fdbox a{text-decoration:underline; cursor:pointer;}
+.fdbox h3{font-size:14px;}
+.fdbox p{line-height:20px;}
+</style>
+<script type="text/javascript" src="dfiles/9597/elib/js/video.js"></script>
+<script type="text/javascript" src="dfiles/9597/elib/js/jquery.min.js"></script>
+<script type="text/javascript" src="dfiles/9597/elib/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="dfiles/9597/elib/js/jquery.scroll-follow.js"></script>
+<script type="text/javascript" src="dfiles/9597/elib/js/floatad.js"></script>
+<script type="text/javascript">
+var searchmode=1;
+    function setTab(name,cursel,n){
+          //var menu=document.getElementById(name);
+        searchmode=cursel;
+          //menu.className="select_tab1";
+        for(i=1;i<=n;i++){
+          var menu=document.getElementById(name+i);
+          
+           menu.className= i==cursel?"select_tab1":"select_tab2";
+    
+        }
+
+    }
+    
+// $( document ).ready( function () {
+  // $( '#CuPlayer' ).scrollFollow( {
+   // speed: 1000,
+    //offset: 60,
+   //} );
+// } );
+function onSearch()
+{
+    //alert(DecodeURI('%23+%E5%85%A8%E5%AD%97%E6%AE%B5%3Dxls%28%27test%27%29+%23',false));
+    if (searchmode==1)
+    {
+        if (document.getElementById("search_input").value == "") {
+            alert("检索内容不能为空！请输入检索内容");
+            return;
+        } else {
+        var strKay = document.getElementById("search_input").value;
+        strKay = EncodeURI(strKay, false);
+        var strUrl = "";
+        strUrl="http://192.168.252.112:8080/opac/search/simsearch?TITLE=" + strKay;
+        window.open(strUrl); //打开检索结果窗口
+        }   
+    }
+    if (searchmode==3)
+    {
+        if (document.getElementById("search_input").value == "") {
+            alert("检索内容不能为空！请输入检索内容");
+            return;
+        }
+        else
+        {
+            var strUrl = "";
+            //strUrl = "http://www.gaozhi.cnki.net/cqgs/";
+            var strKay = document.getElementById("search_input").value;
+            var key1=EncodeURI(strKay, false);
+            var key2="#全字段=xls('"+strKay+"')#";
+            key2=EncodeURI(key2, false);
+            strUrl="http://scholar.cnki.net/result.aspx?type=advance+search&q="+key1+"+&criteria="+key2+"&yst=&ynd=&rt=all&rl=";
+            window.open(strUrl); //打开检索结果窗口
+        }
+        
+    }
+    if (searchmode==2)
+    {
+        //
+        if (document.getElementById("search_input").value == "") {
+            alert("检索内容不能为空！请输入检索内容");
+            return;
+        } else {
+        var strKay = document.getElementById("search_input").value;
+        //strKay = EncodeURI(strKay, false);
+        var strUrl = "";
+        strUrl = "http://qw.duxiu.com/getPage?sw=" + strKay;
+        window.open(strUrl); //打开检索结果窗口
+        }   
+    }
+}
+/*
+    字符编码函数 by yzp 2010.8.3
+    CopyRight(C) 2009-2010 北京金盘
+*/
+var EncodeURI = function(unzipStr,isCusEncode){
+    if(isCusEncode){
+        var zipArray = new Array();
+        var zipstr = "";
+        var lens = new Array();
+        for(var i=0;i<unzipStr.length;i++){
+         var ac = unzipStr.charCodeAt(i);
+         zipstr += ac;
+         lens = lens.concat(ac.toString().length);
+        } 
+        zipArray = zipArray.concat(zipstr);
+        zipArray = zipArray.concat(lens.join("O"));
+        return zipArray.join("N");
+    }else{
+        //return encodeURI(unzipStr);
+        var zipstr=""; 
+        var strSpecial="!\"#$%&'()*+,/:;<=>?[]^`{|}~%"; 
+        var tt= "";
+
+        for(var i=0;i<unzipStr.length;i++){ 
+            var chr = unzipStr.charAt(i); 
+            var c=StringToAscii(chr); 
+            tt += chr+":"+c+"n"; 
+            if(parseInt("0x"+c) > 0x7f){ 
+                 zipstr+=encodeURI(unzipStr.substr(i,1));
+            }else{ 
+                 if(chr==" ") 
+                    zipstr+="+"; 
+                 else if(strSpecial.indexOf(chr)!=-1) 
+                    zipstr+="%"+c.toString(16); 
+                 else 
+                    zipstr+=chr; 
+                } 
+            } 
+        return zipstr; 
+    }
+}
+
+var DecodeURI = function(zipStr,isCusEncode){
+    if(isCusEncode){
+        var zipArray = zipStr.split("N");
+        var zipSrcStr = zipArray[0];
+        var zipLens;
+        if(zipArray[1]){
+            zipLens = zipArray[1].split("O");    
+        }else{
+            zipLens.length = 0;
+        }
+        
+        var uzipStr = "";
+        
+        for(var j=0;j<zipLens.length;j++){
+            var charLen = parseInt(zipLens[j]);
+            uzipStr+= String.fromCharCode(zipSrcStr.substr(0,charLen));
+            zipSrcStr = zipSrcStr.slice(charLen,zipSrcStr.length);
+        }        
+        return uzipStr;
+    }else{
+        //return decodeURI(zipStr);
+        var uzipStr=""; 
+
+        for(var i=0;i<zipStr.length;i++){ 
+            var chr = zipStr.charAt(i); 
+            if(chr == "+"){ 
+                 uzipStr+=" "; 
+            }else if(chr=="%"){ 
+                 var asc = zipStr.substring(i+1,i+3); 
+                 if(parseInt("0x"+asc)>0x7f){ 
+                     uzipStr+=decodeURI("%"+asc.toString()+zipStr.substring(i+3,i+9).toString()); ; 
+                     i+=8; 
+                 }else{ 
+                     uzipStr+=AsciiToString(parseInt("0x"+asc)); 
+                     i+=2; 
+                 } 
+            }else{ 
+                 uzipStr+= chr; 
+            } 
+        } 
+        return uzipStr;
+    }
+}
+
+var StringToAscii = function(str){
+    return str.charCodeAt(0).toString(16);
+}
+
+var AsciiToString = function(asccode){
+    return String.fromCharCode(asccode);
+}
+
+</script>
+<!--<script type="text/javascript">
+        $(function(){
+            //调用漂浮插件
+            $("body").floatAd({
+                imgSrc : '/elib/images/tuiguang.jpg',
+                url:'/elib/Bizproc/News/default.asp?actioncode=channelshow&cid=32'
+            });
+        })
+    </script>-->
+<!--Announced by Visual SiteBuilder 9-->
+<link rel="stylesheet" type="text/css" href="_sitegray/_sitegray_d.css">
+<script language="javascript" src="_sitegray/_sitegray.js"></script>
+<!-- CustomerNO:77656262657232307b7a475c53535742000000034354 -->
+<link rel="stylesheet" type="text/css" href="http://elib.cqdd.cq.cn/zindex.vsb.css">
+<script type="text/javascript" src="system/resource/js/counter.js"></script>
+<script type="text/javascript">_jsq_(1095,'/zindex.jsp',-1,1678358593)</script>
+</head>
+<body>
+
+<div class="zhong">
+
+  <div class="banner">
+ <!-- <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="100%" height="225">
+      <param name="movie" value="/elib/images/2.swf">
+      <param name="quality" value="high">
+      <param name="wmode" value="transparent">
+      <embed src="/elib/images/2.swf" width="100%" height="225" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed>
+    </object>-->
+    <img src="dfiles/9597/elib/images/banner.jpg" width="1000">
+  </div>
+  <div class="menu"><div class="menusel" style="width:95px;">
+      <h2><a href="javascript:;">&nbsp;</a></h2>
+</div>
+<div class="menusel">
+      <h2><a href="javascript:;">&nbsp;</a></h2>
+        <div class="position">
+        <ul class="clearfix typeul">
+        </ul>
+    </div>
+</div>
+<div id="menu4321" class="menusel">
+      <h2><a href="javascript:;" class="topchannel">图书馆首页</a></h2>
+      <div class="position">
+<ul class="clearfix typeul">
+
+        </ul>
+      </div>
+    </div>
+<div id="menu1" class="menusel">
+      <h2><a href="javascript:;" class="topchannel">馆藏资源</a></h2>
+      <div class="position">
+        <ul class="clearfix typeul" style="font-size:14px">
+<li>
+<a class="topmenu1" href="javascript:;">纸质资源</a></li>
+<li>
+<a class="topmenu1" href="javascript:;">数字资源</a></li>
+        </ul>
+      </div>
+    </div>
+
+<div id="menu2" class="menusel">
+      <h2><a href="javascript:;" class="topchannel">读者服务</a></h2>
+      <div class="position">
+        <ul class="clearfix typeul" style="font-size:14px">
+<li>
+<a class="topmenu1" href="javascript:;">新生通道</a></li>
+<li>
+<a class="topmenu1" href="javascript:;">图书馆专栏-读者互动专栏</a></li>
+<li>
+<a class="topmenu1" href="javascript:;">图书馆专栏-聚焦图书馆</a></li>
+<li>
+<a class="topmenu1" href="javascript:;">图书馆专栏-图书馆之窗</a></li>
+<li>
+<a class="topmenu1" href="javascript:;">读者活动</a></li>
+<li>
+<a class="topmenu1" href="javascript:;">资料下载</a></li>
+<li>
+<a class="topmenu1" href="javascript:;">读者留言</a></li>
+        </ul>
+      </div>
+    </div>
+
+<div id="menu3" class="menusel">
+      <h2><a href="javascript:;" class="topchannel">活动专区</a></h2>
+      <div class="position">
+        <ul class="clearfix typeul" style="font-size:14px">
+<li>
+<a class="topmenu1" href="javascript:;">数图推广2013</a></li>
+        </ul>
+      </div>
+    </div>
+
+<div id="menu4" class="menusel">
+      <h2><a href="javascript:;" class="topchannel">开放大学资源</a></h2>
+      <div class="position">
+        <ul class="clearfix typeul" style="font-size:14px">
+<li>
+<a class="topmenu1" href="javascript:;">中央电大图书馆</a></li>
+        </ul>
+      </div>
+    </div>
+
+</div>
+      <div><iframe src="javascript:;" width="100%" height="40" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>
+
+  <div class="main">
+  
+    <div class="left">
+      
+      <div class="box_1">
+        <div class="left_title">便捷服务</div>
+        <div class="left_nr">
+          
+          <table width="100%" border="0" cellspacing="7" cellpadding="0">
+                 <tr><td colspan="2"><a class="topmenu" href="javascript:;" target="">下载专区</a></td></tr><tr><td colspan="2"><a class="topmenu" href="javascript:;">图书荐购</a></td></tr><tr><td colspan="2"><a class="topmenu" href="javascript:;">网上续借</a></td></tr><!--<tr><td colspan="2"><a class="topmenu" href="http://10.34.2.37/ExpiredList.aspx">超期通告</a></td></tr>--><tr><td colspan="2"><a class="topmenu" href="javascript:;">热门图书</a></td></tr><tr><td colspan="2"><a class="topmenu" href="javascript:;">新书通报</a></td></tr><tr><td colspan="2"><a class="topmenu" href="javascript:;">读者登录</a></td></tr>
+         
+          
+          </table>
+        </div>
+      </div>
+      
+      <div class="box_1">
+        <div class="left_title">咨询台</div>
+        <div class="left_nr">
+          
+          <table width="100%" border="0" cellspacing="6" cellpadding="0">
+                <tr>
+                  <td><a target="_blank" href="javascript:;"><img border="0" src="http://elib.cqdd.cq.cn/dfiles/5264/fd89bd410c942fce38ed484d59a0c808_pa" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+                </tr>
+                <tr>
+                  <td><a class="topmenu" href="javascript:;" target="">网上留言</a></td>
+                </tr>
+                <tr>
+                  <td><a class="topmenu" href="javascript:;" target="">FAQ常见问题</a></td>
+                </tr>
+              </table>
+        </div>
+      </div>
+      
+      <div class="box_1">
+        <div class="left_title">二维码</div>
+        <div class="left_nr">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center"><img src="dfiles/9597/elib/images/qrcode.png" width="103" height="103" border="0"></td>
+                </tr>
+                <tr>
+                  <td align="center" height="5px;"></td>
+                </tr>
+              </table>
+        </div>
+      </div>
+       
+      
+    </div>
+    <div class="right">
+      <div class="right_top_img">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="center"><table width="679" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="113" align="center" background="dfiles/9597/elib/images/formbg.png"><table width="95%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="20">&nbsp;</td>
+                    <td height="20" align="left" valign="bottom"><table width="300" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="20" align="center" onclick="setTab('one',1,3)" id="one1" class="select_tab1" style="cursor:pointer">本馆馆藏&nbsp;</td>
+                        <td align="center" onclick="setTab('one',2,3)" id="one2" class="select_tab2" style="cursor:pointer">读秀检索&nbsp;</td>
+                        <td align="center" onclick="setTab('one',3,3)" id="one3" class="select_tab2" style="cursor:pointer">CNKI学术搜索&nbsp;</td>
+                      </tr>
+                    </table></td>
+                    <td height="25">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td width="5%" colspan="2" align="left" valign="middle"></td>
+                    <td valign="middle" align="left"></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3" align="left"></td>
+                    </tr>
+                  <tr>
+                    <td width="60">&nbsp;</td>
+                    <td width="420"><input name="search_input" type="text" class="post_message" id="search_input" value="" style="float:left"></td>
+                    <td align="left"><div>
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="4">&nbsp;</td>
+                          <td><input name="imgbtn" type="image" src="dfiles/9597/elib/images/seach_btn.png" onclick="javascript:onSearch();" border="0"></td>
+                        </tr>
+                      </table>
+                    </div></td>
+                  </tr>
+                  <tr>
+                    <td height="14" colspan="3">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">&nbsp;</td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="news">
+        <!--<div class="news_title" style="display:none"><span><img src="/elib/images/xwdt.gif" /></span><span><img src="/elib/images/ggtz.gif" /></span><a  href="/elib/Bizproc/News/default.asp?actioncode=channelshow&cid=21"><img src="/elib/images/more.gif" /></a></div>-->
+   
+              
+              
+              
+              
+              
+              <table width="100%" border="0" cellspacing="3" cellpadding="0">
+              <tr height="20">
+                    <td align="left" class="left_title" onclick="onGoMore()" width="20%">新闻动态</td>
+                    <td align="left" class="left_title" onclick="onGoMore()" width="20%">公告通知</td>
+                    
+                  </tr>
+              <tr>
+                <td width="50%"><div class="box_1"><script language="javascript" src="system/resource/js/dynclicks.js"></script><script language="javascript" src="system/resource/js/centerCutImg.js"></script><script language="javascript" src="system/resource/js/ajax.js"></script><table border="0" cellspacing="0" cellpadding="0" width="100%" align="center" style="COLOR: #000">
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="图书馆开展资源服务进基层活动" href="javascript:;">图书馆开展资源服务进基...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="图书馆开展资源服务进基层活动" href="javascript:;">2017-12-07 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="我校智能图书漂流机正式投入运行" href="javascript:;">我校智能图书漂流机正式...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="我校智能图书漂流机正式投入运行" href="javascript:;">2017-11-15 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="阅读悦享读系列活动之读书之星交流会圆满举行" href="javascript:;">阅读悦享读系列活动之读...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="阅读悦享读系列活动之读书之星交流会圆满举行" href="javascript:;">2017-11-09 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="图书馆举办“喜迎十九大”系列丛书推荐及展览活动" href="javascript:;">图书馆举办“喜迎十九大...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="图书馆举办“喜迎十九大”系列丛书推荐及展览活动" href="javascript:;">2017-11-01 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="学校“阅读，悦享读”系列活动隆重开幕" href="javascript:;">学校“阅读，悦享读”系...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="学校“阅读，悦享读”系列活动隆重开幕" href="javascript:;">2017-11-01 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="重庆工商职业学院“阅读，悦享读”系列活动--美文征集、书单征集" href="javascript:;">重庆工商职业学院“阅读...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="重庆工商职业学院“阅读，悦享读”系列活动--美文征集、书单征集" href="javascript:;">2017-10-27 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="图书馆召开阅读服务专题工作会" href="javascript:;">图书馆召开阅读服务专题...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="图书馆召开阅读服务专题工作会" href="javascript:;">2017-10-16 </a></td></tr>
+</table><script>_showDynClickBatch(['dynclicks_u1_1475','dynclicks_u1_1473','dynclicks_u1_1472','dynclicks_u1_1462','dynclicks_u1_1465','dynclicks_u1_1474','dynclicks_u1_1461'],[1475,1473,1472,1462,1465,1474,1461],"wbnews", 1678358593)</script>
+</div>
+                </td>
+                <td width="50%">
+                    <div class="box_1"><table border="0" cellspacing="0" cellpadding="0" width="100%" align="center" style="COLOR: #000">
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="闭馆通知" href="javascript:;">闭馆通知</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="闭馆通知" href="javascript:;">2017-07-03 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="图书馆关于开展教师读书会活动的通知" href="javascript:;">图书馆关于开展教师读书...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="图书馆关于开展教师读书会活动的通知" href="javascript:;">2017-06-06 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="关于开通《悦听有声数字图书馆》等数据库试用的通知" href="javascript:;">关于开通《悦听有声数字...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="关于开通《悦听有声数字图书馆》等数据库试用的通知" href="javascript:;">2017-06-02 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="以人民的名义：kindle、音箱、移动电源等你拿！" href="javascript:;">以人民的名义：kindle、...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="以人民的名义：kindle、音箱、移动电源等你拿！" href="javascript:;">2017-04-21 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="2017年4月图书馆推荐阅读书目" href="javascript:;">2017年4月图书馆推荐阅读...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="2017年4月图书馆推荐阅读书目" href="javascript:;">2017-04-19 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="图书馆读者问卷" href="javascript:;">图书馆读者问卷</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="图书馆读者问卷" href="javascript:;">2017-03-22 </a></td></tr>
+<tr>
+<td height="18" width="75%"><img border="0" src="dfiles/9597/elib/images/top_blank.gif">&nbsp;<a class="topmenu" title="图书馆来稿规定及稿酬发放办法（试行）" href="javascript:;">图书馆来稿规定及稿酬发...</a></td>
+<td width="25%" nowrap="" align="middle"><a class="topmenu" title="图书馆来稿规定及稿酬发放办法（试行）" href="javascript:;">2017-03-14 </a></td></tr>
+</table><script>_showDynClickBatch(['dynclicks_u2_1432','dynclicks_u2_1414','dynclicks_u2_1413','dynclicks_u2_1392','dynclicks_u2_1391','dynclicks_u2_1361','dynclicks_u2_1351'],[1432,1414,1413,1392,1391,1361,1351],"wbnews", 1678358593)</script>
+</div>
+                </td>
+                <td></td></tr>
+              
+              
+              
+            </table>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+        <!--<table width="99%" border="0" cellspacing="4" cellpadding="0" style="display:none">
+          <tr><td width="75%" height="18"><img src="/elib/images/top.gif" border="0"/>&nbsp;<a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=346"  title="数字图书馆使用视频">数字图书馆使用视频</a></td><td width="25%" nowrap align="center"><a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=346"  title="数字图书馆使用视频">2015-12-09 </a></td></tr><tr><td width="75%" height="18"><img src="/elib/images/top_blank.gif" border="0"/>&nbsp;<a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=411"  title="图书馆召开部门工作会议">图书馆召开部门工作会议</a><img src="/elib/images/new.gif" border="0"/></td><td width="25%" nowrap align="center"><a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=411"  title="图书馆召开部门工作会议">2016-10-31 </a></td></tr><tr><td width="75%" height="18"><img src="/elib/images/top_blank.gif" border="0"/>&nbsp;<a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=410"  title="数字图书馆走进创新学院">数字图书馆走进创新学院</a></td><td width="25%" nowrap align="center"><a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=410"  title="数字图书馆走进创新学院">2016-10-20 </a></td></tr><tr><td width="75%" height="18"><img src="/elib/images/top_blank.gif" border="0"/>&nbsp;<a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=409"  title="图书馆积极开展十三五建设规划研讨会">图书馆积极开展十三五建设规…</a></td><td width="25%" nowrap align="center"><a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=409"  title="图书馆积极开展十三五建设规划研讨会">2016-10-18 </a></td></tr><tr><td width="75%" height="18"><img src="/elib/images/top_blank.gif" border="0"/>&nbsp;<a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=408"  title="图书馆指南就在您身边">图书馆指南就在您身边</a></td><td width="25%" nowrap align="center"><a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=408"  title="图书馆指南就在您身边">2016-10-17 </a></td></tr><tr><td width="75%" height="18"><img src="/elib/images/top_blank.gif" border="0"/>&nbsp;<a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=407"  title="图书馆形象诞生啦！">图书馆形象诞生啦！</a></td><td width="25%" nowrap align="center"><a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=407"  title="图书馆形象诞生啦！">2016-10-17 </a></td></tr><tr><td width="75%" height="18"><img src="/elib/images/top_blank.gif" border="0"/>&nbsp;<a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=406"  title="读者协会召开动员大会">读者协会召开动员大会</a></td><td width="25%" nowrap align="center"><a class="topmenu" href="/elib/Bizproc/News/default.asp?actioncode=newsshow&nid=406"  title="读者协会召开动员大会">2016-10-17 </a></td></tr>
+        </table>-->
+      </div>
+    </div><div class="right">
+      <table width="99%" border="0" cellspacing="4" cellpadding="0">
+        <tr>
+          <td height="90" width="33%"><div class="box_1">
+            <div class="left_title"><a href="javascript:;" target=""><font color="#FFFFFF">已购数据库</font></a></div>
+            <div class="left_nr"><table border="0" cellspacing="7" cellpadding="0" width="220">
+
+
+<tr>
+<td colspan="2"><a class="topmenu" title="FiF外语学习资源库" href="javascript:;">FiF外语学习资源库</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="超星汇雅电子图书远程访问" href="javascript:;">超星汇雅电子图书远程访问</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="维普考试资源系统" href="javascript:;">维普考试资源系统</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="维普智立方发现系统" href="javascript:;">维普智立方发现系统</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="FiF外语学习资源库本地镜像" href="javascript:;">FiF外语学习资源库本地...</a></td></tr>
+
+<tr>
+<td colspan="2" align="right"><a title="已购数据库" href="javascript:;"><img src="dfiles/9597/elib/images/more.gif"></a></td></tr></table><script>_showDynClickBatch(['dynclicks_u3_1002','dynclicks_u3_1003','dynclicks_u3_1005','dynclicks_u3_1004','dynclicks_u3_1006'],[1002,1003,1005,1004,1006],"wbnews", 1678358593)</script>
+</div>
+          </div></td>
+          <td><div class="box_1">
+            <div class="left_title"><a href="javascript:;" target=""><font color="#FFFFFF">试用数据库</font></a></div>
+            <div class="left_nr"><table border="0" cellspacing="7" cellpadding="0" width="220">
+
+
+<tr>
+<td colspan="2"><a class="topmenu" title="云图" href="javascript:;">云图</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="博看人文期刊数据库" href="javascript:;">博看人文期刊数据库</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="英语阅读在线" href="javascript:;">英语阅读在线</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="“悦读•悦学”数字资源库" href="javascript:;">“悦读•悦学”数字资源库</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="软件通计算机技能自助式网络视频学习系统" href="javascript:;">软件通计算机技能自助...</a></td></tr>
+
+<tr>
+<td colspan="2" align="right"><a title="试用数据库" href="javascript:;"><img src="dfiles/9597/elib/images/more.gif"></a></td></tr></table><script>_showDynClickBatch(['dynclicks_u4_1471','dynclicks_u4_1464','dynclicks_u4_1463','dynclicks_u4_1451','dynclicks_u4_1412'],[1471,1464,1463,1451,1412],"wbnews", 1678358593)</script>
+</div>
+          </div></td>
+          <td><div class="box_1">
+            <div class="left_title"><font color="#FFFFFF">特色资源服务</font></div>
+            <div class="left_nr"><table border="0" cellspacing="7" cellpadding="0" width="220">
+
+
+<tr>
+<td colspan="2"><a class="topmenu" title="科研项目管理系统" href="javascript:;">科研项目管理系统</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="moodle学习平台" href="javascript:;">moodle学习平台</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="办公自动化系统OA" href="javascript:;">办公自动化系统OA</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="数字校园信息门户" href="javascript:;">数字校园信息门户</a></td></tr>
+
+<tr>
+<td colspan="2"><a class="topmenu" title="高职教育" href="javascript:;">高职教育</a></td></tr>
+
+<tr>
+<td colspan="2" align="right"><a title="特色资源服务" href="javascript:;"><img src="dfiles/9597/elib/images/more.gif"></a></td></tr></table><script>_showDynClickBatch(['dynclicks_u5_1021','dynclicks_u5_1020','dynclicks_u5_1019','dynclicks_u5_1018','dynclicks_u5_1022'],[1021,1020,1019,1018,1022],"wbnews", 1678358593)</script>
+</div>
+          </div></td>
+        </tr>
+      </table>
+    </div>
+    <div class="clear"></div>
+    <div class="huoban">
+      <div class="huoban_title"><img src="dfiles/9597/elib/images/title_2.gif"></div>
+      <div class="huoban_nr">
+        <ul><script language="javascript" src="system/resource/js/openlink.js"></script><li><a class="topmenu" href="javascript:;" target="_blank">国家开放大学图书馆</a></li>
+
+<li><a class="topmenu" href="javascript:;" target="_blank">北京广播电视大学图书馆</a></li>
+
+<li><a class="topmenu" href="javascript:;" target="_blank">上海电视大学图书馆</a></li>
+
+<li><a class="topmenu" href="javascript:;" target="_blank">安徽广播电视大学图书馆</a></li>
+
+<li><a class="topmenu" href="javascript:;" target="_blank">中国国家图书馆</a></li>
+
+<li><a class="topmenu" href="javascript:;" target="_blank">重庆图书馆</a></li>
+
+</ul>
+        
+       
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom"><!-- 版权内容请在本组件"内容配置-版权"处填写 -->
+Email：tsg@cqdd.cq.cn 联系电话：023-68465037 地址：重庆市九龙坡区九龙科技园华龙大道1号<br>
+    版权所有 2009-2013 重庆市合川广播电视大学-重庆广播电视大学图书馆 <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8a9e4f1c4e91edfe6ddc133d71032758' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script src="dfiles/9597/elib/js/meun.js" type="text/javascript"></script>
+              <script language="javascript">
+function secBoard(n)
+{
+for(i=0;i<secTable.cells.length;i++)
+secTable.cells[i].className="sec11";
+secTable.cells[n].className="sec22";
+for(i=0;i<mainTable.tBodies.length;i++)
+mainTable.tBodies[i].style.display="none";
+mainTable.tBodies[n].style.display="";
+}
+          </script></div>
+</div>
+
+
+</body>
+</html>

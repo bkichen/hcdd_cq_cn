@@ -1,0 +1,381 @@
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>网考直通车-重庆市合川广播电视大学-重庆广播电视大学</title><meta name="keywords" content="重庆市合川广播电视大学-重庆广播电视大学">
+
+<link href="../dfiles/10908/netks/inc/main.css" rel="stylesheet">
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;}
+.style11 {color: #FFFFFF;}
+-->
+</style>
+<script language="javascript">
+function openwin(url,winname,width,height) {
+     //var newwin=window.open(url,winname,"toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,top="+(screen.height-height)/2+",left="+(screen.width-width)/2+',width=' + width + ',height=' + height);
+     var newwin=window.open(url,winname,"toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,top=0,left=0,width=" + width + ',height=' + height);
+     //newwin.focus();
+     }
+function openwin2(url,winname,width,height) {
+     var newwin=window.open(url,winname,"toolbar=yes,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,top="+(screen.height-height)/2+",left="+(screen.width-width)/2+',width=' + width + ',height=' + height);
+     //var newwin=window.open(url,winname,"toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,top=0,left=0,width=" + width + ',height=' + height);
+     newwin.focus();
+     }
+</script>
+<!--
+<SCRIPT language=JavaScript>
+	self.onError=null;
+	currentX = currentY = 0;  
+	whichIt = null;           
+	lastScrollX = 0; lastScrollY = 0;
+	NS = (document.layers) ? 1 : 0;
+	IE = (document.all) ? 1: 0;
+	function heartBeat() {
+		if(IE) { diffY = document.body.scrollTop; diffX = document.body.scrollLeft; }
+	    if(NS) { diffY = self.pageYOffset; diffX = self.pageXOffset; }
+		if(diffY != lastScrollY) {
+	                percent = .1 * (diffY - lastScrollY);
+	                if(percent > 0) percent = Math.ceil(percent);
+	                else percent = Math.floor(percent);
+					if(IE) document.all.floater.style.pixelTop += percent;
+					if(NS) document.floater.top += percent; 
+	                lastScrollY = lastScrollY + percent;}
+		if(diffX != lastScrollX) {
+			percent = .1 * (diffX - lastScrollX);
+			if(percent > 0) percent = Math.ceil(percent);
+			else percent = Math.floor(percent);
+			if(IE) document.all.floater.style.pixelLeft += percent;
+			if(NS) document.floater.left += percent;
+			lastScrollX = lastScrollX + percent;	}		}
+	function checkFocus(x,y) { 
+	        stalkerx = document.floater.pageX;
+	        stalkery = document.floater.pageY;
+	        stalkerwidth = document.floater.clip.width;
+	        stalkerheight = document.floater.clip.height;
+	        if( (x > stalkerx && x < (stalkerx+stalkerwidth)) && (y > stalkery && y < (stalkery+stalkerheight))) return true;
+	        else return false;}
+	function grabIt(e) {
+		if(IE) {
+			whichIt = event.srcElement;
+			while (whichIt.id.indexOf("floater") == -1) {
+				whichIt = whichIt.parentElement;
+				if (whichIt == null) { return true; } }
+			whichIt.style.pixelLeft = whichIt.offsetLeft;
+		    whichIt.style.pixelTop = whichIt.offsetTop;
+			currentX = (event.clientX + document.body.scrollLeft);
+	   		currentY = (event.clientY + document.body.scrollTop); 	
+		} else { 
+	        window.captureEvents(Event.MOUSEMOVE);
+	        if(checkFocus (e.pageX,e.pageY)) { 
+	                whichIt = document.floater;
+	                StalkerTouchedX = e.pageX-document.floater.pageX;
+	                StalkerTouchedY = e.pageY-document.floater.pageY;} }
+	    return true;	}
+	function moveIt(e) {
+		if (whichIt == null) { return false; }
+		if(IE) {
+		    newX = (event.clientX + document.body.scrollLeft);
+		    newY = (event.clientY + document.body.scrollTop);
+		    distanceX = (newX - currentX);    distanceY = (newY - currentY);
+		    currentX = newX;    currentY = newY;
+		    whichIt.style.pixelLeft += distanceX;
+		    whichIt.style.pixelTop += distanceY;
+			if(whichIt.style.pixelTop < document.body.scrollTop) whichIt.style.pixelTop = document.body.scrollTop;
+			if(whichIt.style.pixelLeft < document.body.scrollLeft) whichIt.style.pixelLeft = document.body.scrollLeft;
+			if(whichIt.style.pixelLeft > document.body.offsetWidth - document.body.scrollLeft - whichIt.style.pixelWidth - 20) whichIt.style.pixelLeft = document.body.offsetWidth - whichIt.style.pixelWidth - 20;
+			if(whichIt.style.pixelTop > document.body.offsetHeight + document.body.scrollTop - whichIt.style.pixelHeight - 5) whichIt.style.pixelTop = document.body.offsetHeight + document.body.scrollTop - whichIt.style.pixelHeight - 5;
+			event.returnValue = false;
+		} else { 
+			whichIt.moveTo(e.pageX-StalkerTouchedX,e.pageY-StalkerTouchedY);
+	        if(whichIt.left < 0+self.pageXOffset) whichIt.left = 0+self.pageXOffset;
+	        if(whichIt.top < 0+self.pageYOffset) whichIt.top = 0+self.pageYOffset;
+	        if( (whichIt.left + whichIt.clip.width) >= (window.innerWidth+self.pageXOffset-17)) whichIt.left = ((window.innerWidth+self.pageXOffset)-whichIt.clip.width)-17;
+	        if( (whichIt.top + whichIt.clip.height) >= (window.innerHeight+self.pageYOffset-17)) whichIt.top = ((window.innerHeight+self.pageYOffset)-whichIt.clip.height)-17;
+	        return false;}
+	    return false;	}
+	function dropIt() {whichIt = null;
+	    if(NS) window.releaseEvents (Event.MOUSEMOVE);
+	    return true;	}
+	if(NS) {window.captureEvents(Event.MOUSEUP|Event.MOUSEDOWN);
+		window.onmousedown = grabIt;
+	 	window.onmousemove = moveIt;
+		window.onmouseup = dropIt;	}
+	if(IE) {
+		document.onmousedown = grabIt;
+	 	document.onmousemove = moveIt;
+		document.onmouseup = dropIt;	}
+	if(NS || IE) action = window.setInterval("heartBeat()",1);
+	</SCRIPT>
+	-->
+<!--Announced by Visual SiteBuilder 9-->
+<link rel="stylesheet" type="text/css" href="../_sitegray/_sitegray_d.css">
+<script language="javascript" src="../_sitegray/_sitegray.js"></script>
+<!-- CustomerNO:77656262657232307b7a475c53535742000000034354 -->
+<link rel="stylesheet" type="text/css" href="http://www.cqdd.cq.cn/wkztczy.vsb.css">
+<script type="text/javascript" src="../system/resource/js/vsbscreen.min.js" id="_vsbscreen" devices="pc|pad"></script>
+<script type="text/javascript" src="../system/resource/js/counter.js"></script>
+<script type="text/javascript">_jsq_(1262,'/wkztczy.jsp',-1,1678356194)</script>
+</head>
+
+<body>
+<script language="JavaScript">
+    document.body.onselectstart=new Function("window.event.returnValue = false");
+</script>
+<!--
+<DIV id=floater style="HEIGHT: 100px; LEFT: 4px; POSITION: absolute; TOP: 69px; WIDTH: 120px; Z-INDEX: 1">
+<a href="/zb/ptzs.htm" target="_blank"><IMG height=100 width=100 src="newsimages/05zhuanke.gif" border=0></a></DIV>
+-->
+<table width="774" height="120" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td background="../dfiles/10908/netks/images/logo.jpg">&nbsp;</td>
+  </tr>
+</table>
+
+<table width="774" height="240" border="0" align="center" cellpadding="0" cellspacing="0" background="../dfiles/10908/netks/images/bjshu.gif" bgcolor="#ffffff" style="border-right: #cccccc 1px solid;border-left: #cccccc 1px solid;">
+  <tbody>
+    <tr>
+      <td valign="top">
+        <table height="21" cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tbody>
+            <tr>
+              <td width="122" background="../dfiles/10908/netks/images/corner.jpg" bgcolor="#f2f2f2" rowspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff">网考政策</font></td>
+              <td bgcolor="#606f7f" colspan="7" height="1"></td>
+            </tr>
+            <tr>
+              <td width="36" bgcolor="#f2f2f2">&nbsp;&nbsp;</td>
+              <td align="right" width="400" bgcolor="#f2f2f2"><img src="../dfiles/10908/netks/images/arrow.gif" width="30" height="12"><a href="javascript:;" target="_blank"><img src="../dfiles/10908/netks/images/more.gif" width="32" height="12" border="0"></a></td>
+              <td align="right" width="23" bgcolor="#f2f2f2">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+		<table width="386" height="210" border="0" cellspacing="0">
+        <tr>
+          <td width="386" height="175" valign="top"><script language="javascript" src="../system/resource/js/dynclicks.js"></script><script language="javascript" src="../system/resource/js/centerCutImg.js"></script><script language="javascript" src="../system/resource/js/ajax.js"></script><table border="0" cellspacing="0" cellpadding="0" width="570" align="center" style="LINE-HEIGHT: 13.5pt">
+
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">关于转发奥鹏中心《2012年9月现代远程教育试点高校网络教育部分公共基础课全国统一考试考务工作实施方案》的通知</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">关于转发奥鹏中心《2012年4月现代远程教育试点高校网络教育部分公共基础课全国统一考试考务工作实施方案》的通知</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">关于转发奥鹏中心《2011年12月现代远程教育试点高校网络教育部分公共基础课全国统一考试考务工作实施方案》的通知</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">关于转发奥鹏中心《2011年9月现代远程教育试点高校网络教育部分公共基础课全国统一考试考务工作实施方案》的通知</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">关于转发奥鹏中心《2011年4月现代远程教育试点高校网络教育部分公共基础课全国统一考试考务工作实施方案》的通知</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">12月统考实施方案</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">关于转发网考办《全国高校网络教育部分公共基础课统一考试2010年12月考试工作安排》和《2010年12月考试工作整体流程》通知</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">关于转发网考办《关于加强2010年9月“统考”考务工作管理的通知》的通知</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">关于转发网考办《全国高校网络教育部分公共基础课统一考试2010年9月考试工作安排》和奥鹏中心《2010年9月现代远程教育试点高校网络教育部分公共基础课全国统一考试考务工作实施方案》通知</a></td></tr>
+
+</table><script>_showDynClickBatch(['dynclicks_u0_8925','dynclicks_u0_8947','dynclicks_u0_8946','dynclicks_u0_8945','dynclicks_u0_8944','dynclicks_u0_8943','dynclicks_u0_8942','dynclicks_u0_8941','dynclicks_u0_8940'],[8925,8947,8946,8945,8944,8943,8942,8941,8940],"wbnews", 1678356194)</script>
+</td>
+        </tr>
+      </table>
+      </td>
+      <td valign="top" width="1" bgcolor="#cccccc"></td>
+      <td valign="top" width="190">
+        <table width="100%" height="22" border="0" cellpadding="0" cellspacing="0" background="../dfiles/10908/netks/images/itembar2.jpg" bgcolor="#ffffff">
+          <tbody>
+            <tr>
+              <td width="30" height="19" align="center">&nbsp; </td>
+              <td>&nbsp;</td>
+              <td class="menu">公告栏</td>
+            </tr>
+          </tbody>
+        </table>
+		
+		
+        <table width="186" height="210" border="0" cellspacing="0" background="../dfiles/10908/netks/images/tzbg2.jpg" align="center">
+          <tr>
+            <td width="188" height="10"></td>
+          </tr>
+          <tr>
+            <td width="188" valign="top"><table border="0" cellspacing="0" cellpadding="0" width="184" align="center" style="LINE-HEIGHT: 12pt">
+
+
+<tr>
+<td height="22">&nbsp;<img src="../dfiles/10908/images/jt_red.gif"> <a class="blue" title="发布时间：2011-01-12 14:07:54阅读次数：6760" href="javascript:;" target="_blank">全国统一考试学习中心网上报考、缴费操作指南</a></td></tr>
+
+<tr>
+<td height="22">&nbsp;<img src="../dfiles/10908/images/jt_red.gif"> <a class="blue" title="发布时间：2011-01-12 14:07:54阅读次数：6760" href="javascript:;" target="_blank">“统考”考务工作手册（0904修订版）.doc</a></td></tr>
+
+<tr>
+<td height="22">&nbsp;<img src="../dfiles/10908/images/jt_red.gif"> <a class="blue" title="发布时间：2011-01-12 14:07:54阅读次数：6760" href="javascript:;" target="_blank">Microsoft Windows Installer 3.0</a></td></tr>
+
+<tr>
+<td height="22">&nbsp;<img src="../dfiles/10908/images/jt_red.gif"> <a class="blue" title="发布时间：2011-01-12 14:07:54阅读次数：6760" href="javascript:;" target="_blank">2008年4月网考考点服务器</a></td></tr>
+
+<tr>
+<td height="22">&nbsp;<img src="../dfiles/10908/images/jt_red.gif"> <a class="blue" title="发布时间：2011-01-12 14:07:54阅读次数：6760" href="javascript:;" target="_blank">2008年4月网考考场服务器</a></td></tr>
+
+</table><script>_showDynClickBatch(['dynclicks_u1_9022','dynclicks_u1_9020','dynclicks_u1_9019','dynclicks_u1_9018','dynclicks_u1_9017'],[9022,9020,9019,9018,9017],"wbnews", 1678356194)</script>
+</td>
+          </tr>
+		  <tr>
+            <td width="188" height="18" align="right"><a href="javascript:;" target="_blank"><img src="../dfiles/10908/netks/images/more.gif" width="32" height="12" border="0"></a></td>
+          </tr>
+        </table></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table width="772" height="250" border="0" align="center" cellpadding="0" cellspacing="0" style="border-right: #cccccc 1px solid;border-left: #cccccc 1px solid;border-top: #cccccc 1px solid;border-bottom: #f2f2f2f2 1px solid;">
+  <tr>
+    <td width="386" height="21"><table width="386" height="21" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="121" background="../dfiles/10908/netks/images/corner.jpg" bgcolor="#f2f2f2">　　<span class="style11">大学英语资源</span></td>
+        <td width="13" bgcolor="#f2f2f2">&nbsp;</td>
+        <td width="231" align="right" bgcolor="#f2f2f2"><img src="../dfiles/10908/netks/images/arrow.gif" width="30" height="12"><a href="javascript:;" target="_blank"><img src="../dfiles/10908/netks/images/more.gif" width="32" height="12" border="0"></a></td>
+        <td width="22" bgcolor="#f2f2f2">&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="386" height="21"><table width="386" height="21" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="121" background="../dfiles/10908/netks/images/corner.jpg" bgcolor="#f2f2f2">　&nbsp;&nbsp;<span class="style11">计算机应用基础</span></td>
+        <td width="13" bgcolor="#f2f2f2">&nbsp;</td>
+        <td width="231" align="right" bgcolor="#f2f2f2"><img src="../dfiles/10908/netks/images/arrow.gif" width="30" height="12"><a href="javascript:;" target="_blank"><img src="../dfiles/10908/netks/images/more.gif" width="32" height="12" border="0"></a></td>
+        <td width="22" bgcolor="#f2f2f2">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td width="386" valign="middle" style="border-right: #cccccc 1px solid;"><table width="376" height="210" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top"><table border="0" cellspacing="0" cellpadding="0" width="386" align="center" style="LINE-HEIGHT: 13.5pt">
+
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2018年12月大学英语B练习题</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2018年4月大学英语B试题</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2017年12月大学英语B试题</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2017大学英语4月练习题</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">16-4大学英语B练习题</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2015年12月大学英语B练习题</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2015-4大学英语B复习题</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2014年9月统考大学英语B练习题</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2014-4大学英语B练习题</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2013-12大学英语B复习题</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">大学英语B（2013-4复习题）</a></td></tr>
+
+</table><script>_showDynClickBatch(['dynclicks_u2_10855','dynclicks_u2_10253','dynclicks_u2_10143','dynclicks_u2_9361','dynclicks_u2_9061','dynclicks_u2_9060','dynclicks_u2_9059','dynclicks_u2_9058','dynclicks_u2_9057','dynclicks_u2_9056','dynclicks_u2_9055'],[10855,10253,10143,9361,9061,9060,9059,9058,9057,9056,9055],"wbnews", 1678356194)</script>
+</td>
+      </tr>
+    </table></td>
+    <td width="386" valign="middle"><table width="380" height="210" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top"><table border="0" cellspacing="0" cellpadding="0" width="386" align="center" style="LINE-HEIGHT: 13.5pt">
+
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">网考环境操作演示</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">《计算机应用基础》考试大纲</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">《计算机应用基础》课程实施方案（网考教材）</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">全国网络学院《计算机应用基础》统考练习系统(下载后安装使用)</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2012年4月网考计算机应用基础复习资料</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2010年三次计算机网考1-9章理论题解</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">全国网络考试计算机考卷难度分析（08.9-11.4）</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">2009年4月网考计算机应用基础1-4章考点解读</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">08年网考部分试题和参考答案整理</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">网络教育《计算机应用基础》课程网上教学活动文本</a></td></tr>
+
+<tr>
+<td height="20"><img src="../dfiles/10908/images/dot.gif"> <a class="blue" title="" href="javascript:;" target="_blank">全国网考《计算机应用基础》课程考试情况通报</a></td></tr>
+
+</table><script>_showDynClickBatch(['dynclicks_u3_9122','dynclicks_u3_9144','dynclicks_u3_9143','dynclicks_u3_9142','dynclicks_u3_9141','dynclicks_u3_9140','dynclicks_u3_9139','dynclicks_u3_9138','dynclicks_u3_9137','dynclicks_u3_9136','dynclicks_u3_9135'],[9122,9144,9143,9142,9141,9140,9139,9138,9137,9136,9135],"wbnews", 1678356194)</script>
+</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="774" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td height="1" bgcolor="#606f7f"></td>
+  </tr>
+</table>
+<table width="774" border="0" align="center" bgcolor="#3165D6">
+  <tr><td height="2"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="2" width="774" align="center" bgcolor="#A0BFFF" border="0">
+  <tbody>
+  <tr>
+    <td class="toolbar_2" height="3"></td></tr>
+  <tr>
+    <td class="photocolor" align="center">
+      <table cellspacing="0" cellpadding="2" border="0">
+        <tbody>
+        <tr>
+          <td width="199" height="25" align="center">&nbsp;</td>
+          <td width="404" align="center">Copyright&copy; 2003-2006　重庆市合川广播电视大学-重庆广播电视大学　版权所有</td>
+          <td width="155" align="center">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center">&nbsp; </td>
+          <td align="center">地址：重庆市九龙坡区九龙园区华龙大道1号 　邮编：400052<br>          </td>
+          <td align="center">&nbsp;</td>
+        </tr>
+      </tbody>
+      </table></td>
+</tr></tbody></table>
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+
+
+
+/***** 图片新闻/新闻 *****/
+.news          { width:1002px; height:320px; margin-top:37px;}
+
+.right_newstop { width:100%; height:45px; background:url(../imagesv2/t1_bg.jpg) left top repeat-x;}
+
+.right_newstop td { width:112px; height:45px; font:16px/45px "Microsoft YaHei"; color:#7f7f7f; text-align:center; cursor:pointer;}
+.bt1_hover { width:112px; height:45px; background:url(../imagesv2/t1.jpg) left bottom repeat-x; font:bold 16px/45px "Microsoft YaHei"; color:#000000; text-align:center;}
+
+.newslist1           { width:538px; height:252px; text-align:left; margin-top:14px;}
+.newslist1 li        { font:14px/28px "宋体"; color:#383838; background:url(../imagesv2/ico.jpg) left center no-repeat; padding-left:10px;}
+.newslist1 li a      { font:14px/28px "宋体"; color:#383838;}
+.newslist1 li a:hover{ color:#ff0000;}
+.newslist1 li span   { float:right; font:11px/28px "Arial"; color:#a6a3a3;}
+
+.newslist1 li.morex1        { font:12px/20px "宋体"; color:#383838; background:none; text-align:right;}
+.newslist1 li.morex1 a      { font:12px/20px "宋体"; color:#383838;}
+.newslist1 li.morex1 a:hover{ color:#ff0000;}
+
+
+
+
+/***** 正文第二行 *****/
+.news2          { width:1002px; height:450px; margin-top:10px;}
+
+.news2_left          { width:710px; height:450px;}
+
+.news2_right          { width:270px; height:450px;}
+
+
+/***** 常用栏目 *****/
+.cylm_top      { width:710px; height:45px; background:url(../imagesv2/t2.jpg) left bottom no-repeat;}
+.cylm_topl     { width:112px; font:bold 16px/45px "Microsoft YaHei"; color:#010101; text-align:center;}
+.cylm_topr      { font:12px/45px "宋体"; color:#000000; text-align:right;}
+.cylm_topr a    { font:12px/45px "宋体"; color:#000000;}
+
+.cylm_tt           { margin-top:30px;}
+
+.cylm_c            { width:620px; height:210px;}
+.cylm_c li        { width:195px; height:95px; float:left; padding-right:8px; padding-bottom:8px;}
+.cylm_c li a:hover{ width:195px; height:95px; float:left; padding-right:8px; padding-bottom:8px; border:1px #FFFFFF solid;}
+
+
+
+
+/***** 专题报道 *****/
+.ztbd_top      { width:710px; height:45px; background:url(../imagesv2/t3.jpg) left top no-repeat; margin-top:14px;}
+.ztbd_top      { font:12px/45px "宋体"; color:#000000; text-align:right;}
+.ztbd_top a    { font:12px/45px "宋体"; color:#000000;}
+
+
+.ztbd           { width:710px; height:80px; margin-top:20px;}
+.ztbd li        { float:left; width:226px; height:80px; margin-left:4px; margin-right:4px;}
+
+
+
+/***** 右边 *****/
+.notice              { width:270px; height:262px; border:1px #dddddd solid;}
+.notice_top           { width:268px; height:44px; font:bold 16px/44px "Microsoft YaHei"; color:#010101; background:url(../imagesv2/t4.jpg) top left no-repeat; padding-left:38px;}
+
+.newslist3           { width:240px; height:200px; margin-top:6px;}
+.newslist3 li        { font:14px/28px "宋体"; color:#4c4c4c; background:url(../imagesv2/ico.jpg) left center no-repeat; padding-left:10px;}
+.newslist3 li a      { font:14px/28px "宋体"; color:#4c4c4c;}
+.newslist3 li a:hover{ color:#ff0000;}
+
+
+
+
+/***** 右边图片链接 *****/
+.rightpr     { margin-top:10px;}
+
+
+
+
+
+
+/***** 底部链接 *****/
+.links       { width:1004px; height:30px; margin-top:5px;}
+.links select{ width:220px; margin-right:5px; margin-left:5px; font:12px/18px "宋体"; color:#5c5b58;}
+
+
+
+
+
+
+

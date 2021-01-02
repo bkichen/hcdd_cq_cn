@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link href="../Portal/portalCss/indexpublic.css" rel="stylesheet" type="text/css">
+<link href="../Portal/portalCss/shanghaindex.css" rel="stylesheet" type="text/css">
+<link href="../Portal/portalCss/cx-css.css" rel="stylesheet" type="text/css">
+<link href="../Portal/portalCss/font-awesome.css" rel="stylesheet" type="text/css">
+<!-- jquery 应先于bootstrap引用 -->
+<script src="../easyui/jquery-2.1.1.min.js"></script>
+<script src="../easyui/jquery-migrate-1.1.1.min.js"></script>
+<!-- bootstrap 引用 -->
+<!-- bootstrap css 会与原有样式冲突 -->
+<!--<link href="Portal/ziqiu/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">-->
+<script type="text/javascript" src="../Portal/ziqiu/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="../Portal/js/shanghaiind.js"></script>
+<script src="../Portal/DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../Portal/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../Portal/js/login.js"></script>
+<script src="../Portal/js/Roll.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".item:odd").addClass("lbg");
+	})
+</script>
+<script type="text/javascript">
+	$(function() {
+		$(".loginbt").hover(function() {
+			$(".loginbox").show();
+			$(".loginbox").mouseleave(function() {
+				$(this).hide();
+			});
+
+		})
+	});
+</script>
+<script type="text/javascript">
+	$(function() {
+		var settime;
+		$("#scrollbar").hover(function() {
+			clearInterval(settime);
+		}, function() {
+			settime = setInterval(function() {
+				var ul_first = $("#scrollbar ul:first");
+				var height = ul_first.find("li:first").height();
+				ul_first.animate({
+					marginTop : -height + "px"
+				}, 600, function() {
+					ul_first.css({
+						marginTop : 0
+					}).find("li:first").appendTo(ul_first);
+				});
+			}, 3000);
+		}).trigger("mouseleave");
+	});
+</script>
+<!-- 收藏和设为主页 -->
+<script type="text/javascript">
+	function showLogin() {
+		$(".cy_denglubox").show();
+		$(".cy_dengluboxbg").show();
+		$(".indexcontainer").css("position", "relative");
+		$(".indexcontainer").css("z-index", "-5");
+		document.documentElement.scrollTop = document.body.scrollTop =0;
+	}
+
+	//设置主页
+	function addHomepage(obj) {
+		var url = window.location.href;
+		try {
+			obj.style.behavior = "url(#default#homepage)";
+			obj.sethomepage(url);
+		} catch (e) {
+			if (document.all) {
+				document.body.style.behavior = "url(#default#homepage)";
+				document.body.setHomePage(url);
+			} else if (window.sidebar) {
+				if (window.netscape) {
+					try {
+						netscape.security.PrivilegeManager
+								.enablePrivilege("UniversalXPConnect");
+					} catch (e) {
+						alert("您的浏览器不支持自动设置首页,请手动设置.");
+					}
+				}
+				var prefs = Components.classes['@mozilla.org/preferences-service;1']
+						.getService(Components.interfaces.nsIPrefBranch);
+				prefs.setCharPref("browser.startup.homepage", url);
+			} else {
+				alert("您的浏览器不支持自动设置首页,请手动设置.");
+			}
+		}
+	}
+	//收藏
+	function addFavorite() {
+		var url = window.location.href;
+		try {
+			window.external.addFavorite(url, "学分银行");
+		} catch (e) {
+			try {
+				window.sidebar.addPanel("学分银行", url, "");
+			} catch (e) {
+				alert("加入收藏失败,请手动收藏.");
+			}
+		}
+	}
+</script><script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" type="text/css" href="easyui/themes/ui-cupertino/easyui.css"> 
+<link rel="stylesheet" type="text/css" href="../Portal/portalCss/cx-css.css">
+<script type="text/javascript" src="Portal/js/stuResult.js"></script>
+
+<title>重庆市终身学习学分银行-学分银行</title>
+
+</head>
+<body class="mainbody">
+
+
+<!-- 查看弹窗 -->
+<div id="cy_yhqsbigbg" class="cy_yhqsbigbg"></div>
+<div id="cy_yhqshidebox" class="cy_yhqshidebox"></div>
+<div id="cy_yhqsbigbg02" class="cy_yhqsbigbg02"></div>
+<div id="cy_yhqshidebox02" class="cy_yhqshidebox02"></div>
+<div id='cr_tcc02'></div>
+<div id='cr_show'></div>
+<script>
+	function clickLogin(obj){
+		$(obj).addClass("clickLogin");
+		$(obj).siblings().removeClass("clickLogin");
+		if($(obj).text() == '企业登录'){
+			$("#EnterState").val("1");
+			$("#fogetType").attr("href","/CBC/login!forgetPassword.htm?fogetType=1");
+		}else{
+			$("#EnterState").val("0");
+			$("#fogetType").attr("href","/CBC/login!forgetPassword.htm?fogetType=0");
+		}
+	};
+	$(function(){
+		$("#indexNavUl").find("li a").each(function(){
+			$(this).on('click',function(){
+				var did=$(this).attr("data-id");
+				var durl=$(this).attr("data-url");
+				window.location.href =durl+"?id="+did;
+			});
+		});
+	});
+	/*function post(URL, PARAMS) {
+	  var temp = document.createElement("form");
+	  temp.action = URL;
+	  temp.method = "post";
+	  temp.style.display = "none";
+	  for (var x in PARAMS) {
+	    var opt = document.createElement("textarea");
+	    opt.name = x;
+	    opt.value = PARAMS[x];
+	    temp.appendChild(opt);
+	  }
+	  document.body.appendChild(temp);
+	  temp.submit();
+	  document.body.removeChild(temp);  
+	}*/
+</script>	
+<style>
+.stateTransitionName{
+	margin-top: 15px;
+    overflow: hidden;
+    width: 100%;
+    float: left;
+}
+
+
+</style>
+<script src="../toucss/zhcn/zh_cn.js"></script>
+<!--登录弹出框-->
+<div class="cy_dengluboxbg"></div>
+<div class="cy_denglubox">
+	<form id="loginform" action="/CBC/loginAction!doLogin.htm" method="post">
+		<h1>登录学分银行<span class="closed"><a href="#"><img src="../Portal/portalImages/close.png"></a>
+			</span>
+		</h1>
+		<dl class="contentLoginBig">
+			<h3 class="EnterpriseLogin" onclick="clickLogin(this)">企业登录</h3>
+			<input name="state" id="EnterState" type="hidden" value="0">
+			<div class="spacing"></div>
+			<h3 class="PersonalLogin clickLogin" onclick="clickLogin(this)">个人登录</h3>
+			<div class="clearfix"></div>
+		</dl>
+		<dl>
+			 <dd style="border:#dbdbdb 1px solid;"><img src="../Portal/portalImages/join-z.png" style="  display:block; float:left; vertical-align: middle;">
+	        <input type="text" id="loginUser" name="userAccount" style=" color:#7f7f7f" class="cy_zhanghao" value="" placeholder="请输入账号或身份证号码">
+	        </dd>
+	        <dd style="border:#dbdbdb 1px solid;"><img src="../Portal/portalImages/join-m.png" style="  display:block; float:left;vertical-align: middle; ">
+	        <input type="password" id="pwd" name="password" style=" color:#7f7f7f" class="cy_zhanghao" value="请输入密码" onfocus="if(this.value=='请输入密码'){this.value=''};this.style.color='black';" onblur="if(this.value==''||this.value=='请输入密码'){this.value='请输入密码';this.style.color='#7f7f7f';}">
+	        </dd>
+	       	
+	        <dd>
+	        	<div class="cy_adyzm"><input type="text" name="validateCode" id="validateCode" style=" color:#7f7f7f" class="cy_yanzhengm" value="请输入验证码" onfocus="if(this.value=='请输入验证码'){this.value=''};this.style.color='black';" onblur="if(this.value==''||this.value=='请输入验证码'){this.value='请输入验证码';this.style.color='#7f7f7f';}"></div>
+	        	<div class="cy_djyzm"><label><a href="javascript:;"><img class="join_yz_pic" id="validaImg" src="smsValidateRecAction!getLoginVal.jpg" title="点击更换验证码"></a></label></div>
+	        <div style="clear:both;"></div>
+	        	<div style="margin:3px 0px;" id="messageError"></div>
+        	</dd>
+		</dl>
+		<div class="cy_login02bt">
+			<a href="login!loadRegister.html">申请开户</a>
+			<a style="float:right" id="fogetType" href="login!forgetPassword-0.html">忘记密码?</a> 
+			<input type="submit" value="登录" class="cy_login02btson">
+		</div>
+	</form>
+</div>
+<!--cy_denglubox-->
+<!--登录弹出框end-->
+<div class="indexcontainer">
+	<div class="cy_greybgad">
+	<div class="cy_indextitle">
+		<h1>
+			<img src="../Portal/portalImages/indexpic_04.png">
+		</h1>
+		
+		 <div class="cx_public">
+		 	<div class="stateTransition">
+				<select id="sel">		
+					<option value="1" selected="selected">简体中文</option>
+					<option value="2">繁体中文</option>
+				<select>
+			</select></select></div>
+		
+		<!-- <div class="welcom">
+			<a href="javascript:void(0);" onclick="addFavorite();"><img
+				src="Portal/portalImages/index_06.png" /><span>加入收藏</span>
+			</a><a>|</a> <a href="javascript:void(0);" onclick="addHomepage(this);"><img
+				src="Portal/portalImages/indexpic_09.png" /><span>设为首页</span>
+			</a>
+		</div> -->
+		
+					<div class="cx_bottem"><a class="login"></a><a class="signin" href="login!loadRegister.html"></a> </div>
+			</div>
+	</div>
+	<!--cy_indextitle-->
+	</div>
+	<div class="alter_nav">
+		<div class="cy_indexnav">
+			<ul id="indexNavUl">
+														<li>
+						<a href="javascript:void(0);" data-url="index.htm" data-id="402889fd4c45bf3f014c45d153c10002">首页<span>Home</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadSchooleBank.htm" data-id="402889fd4c45bf3f014c45d32cdf0003">学银动态<span>Dynamic</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadPolicyAndAnnouncemet.htm" data-id="402889fd4c45bf3f014c45d377830004">政策与公告<span>Policy&Notice</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadBusinessHanding.htm" data-id="402889fd4c45bf3f014c45d3b5e00005">业务办理<span>Business Handling</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!educationGain.htm" data-id="402889fd4c45bf3f014c45d3fbee0006" class="cy_indexcolor">标准体系<span>Standard System</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadResourceSupermarket.htm" data-id="402889fd4c45bf3f014c45d439660007">资源超市<span>Resources</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadHelpCenter.htm" data-id="402889fd4c45bf3f014c45d496ae0008">帮助中心<span>Help Center</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!characteristicDisplay.htm" data-id="402889fd4c45bf3f014c45d50d1b0219">特色展示<span>Characteristic</span></a>
+					</li> 
+																			<li>
+						<a href="javascript:void(0);" data-url="/CBC/login!loadAboutUs.htm" data-id="402889fd4c45bf3f014c45d55ae9000a">关于我们<span>AboutUs</span></a>
+					</li> 
+												</ul>
+		</div>
+		<!--cy_indexnav-->
+	</div><div class="cy_zhucebaner">
+ <!--    <div class="cy_loginbg">
+		<a href="Register.vm"><div class="cy_indexzc"><p>注册</p></div></a>
+    	<a href="#"><div class="cy_indexdl"><p>登录</p></div></a>
+    	<a href="Register.vm"><div class="cy_indexzc"><p>注册</p></div></a><a href="#"><div class="cy_indexdl"><p>登录</p></div></a>
+
+    </div> -->
+</div><!--cy_indexbanner--><div class="maincontent"><!-- 中间区域开始 -->
+
+<!--main-->
+<div class="main">
+<dl class="main_nav">
+	<dd id="main_nav_title">
+		<a>标准体系</a> <a id="smm">Standard System</a>
+	</dd>
+	<dd class="bbo">
+									<div id="spicel">
+					<a href="javascript:;" onclick="javascript:AlablePost('/CBC/login!educationGain.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45d98cb40014','check':'1'})">学历教育学习成果</a>
+				</div>
+												<div class="nv_bo">
+					<a href="javascript:;" onclick="javascript:AlablePost('/CBC/login!collegeCourseMajor.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45d9c7e20015','check':'1'})">非学历教育学习成果</a>
+				</div>
+												<div class="nv_bo">
+					<a href="javascript:;" onclick="javascript:AlablePost('/CBC/login!redirects.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45da210f0016','check':'1'})"> 无定式教育学习成果</a>
+				</div>
+						</dd>
+</dl>
+
+<script type="text/javascript">
+	function AlablePost(url,para){
+		var subForm = document.createElement("form");
+		subForm.method = "post";  
+        subForm.action = url;  
+		for (var i in para){
+			var myInput = document.createElement("input");       
+            myInput.setAttribute("name", i);  // 为input对象设置name  
+            myInput.setAttribute("value", para[i]);  // 为input对象设置value  
+            subForm.appendChild(myInput);  
+		}
+		document.body.appendChild(subForm);     
+        subForm.submit();   
+        document.body.removeChild(subForm);  // 提交后移除创建的form
+	}
+</script><a id="mark"></a>
+<div class="main_container">
+<div class="main_container_t">学历教育学习成果</div>
+<div class="sytm_stii"><p align="left"><font face="tahoma, arial, verdana, sans-serif"><b>学历教育学习成果主要是指学习者在正规教育体系中有目的、有组织、有计划地在固定机构或场所由专职教学人员对其进行教育，有需要遵循的教学规范和教学时间表，学习过程结束时实施相应的评价与认证，学习成果通过毕业证书或学分的形式表现出来，由学校颁发国家统一印制的毕业证书和学位证书，以及参加学历教育学习的各类别课程。</b></font><br></p></div>
+
+
+<div class="sytm_sti">
+	<!--?id=402889fd4c45bf3f014c45d3fbee0006&typeId=402889fd4c45bf3f014c45d98cb40014&Page=5&pageNo=1&check=1&form=yes-->
+	<form action="/CBC/login!educationGain.htm#mark" method="post" id="seachForm">
+		<input name="id" type="hidden" value="402889fd4c45bf3f014c45d3fbee0006">
+		<input name="typeId" type="hidden" value="402889fd4c45bf3f014c45d98cb40014">
+		<input name="Page" type="hidden" value="5">
+		<input name="pageNo" type="hidden" value="1">
+		<input name="check" type="hidden" value="1">
+		<input name="form" type="hidden" value="yes">
+		<span>成果名称：<input id="certificateName" name="certificateName" value="" class="sytm_inp"></span>
+		<span class="se_arce">成果编码：<input id="awardOrgName" name="awardOrgName" value="" class="sytm_inp"></span>
+		<input type="submit" value="查询" class="sytm_search">
+	</form>
+</div>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="sytm_tab">
+  <tr class="sytm_tit">
+    <td>序号</td>
+    <td>成果名称</td>
+    <td>成果编码</td>
+    <td>成果等级</td>
+    <td>检索码</td>
+    <td>对应高校课程</td>
+    <td>详细信息</td>
+  </tr>
+  
+  	  	    		  <tr class="sytm_m1">
+		    <td width="40" class="sytm_m1_first">1</td>
+		    <td width="250" id="certificate" class="sytm_m1_second">电声及声像技术</td>
+		    <td width="50" class="sytm_m1_first">X201510092502809</td>
+		    <td class="sytm_m1_second">三级</td>
+		    <td class="sytm_m1_first"></td>
+		    <td width="110" class="sytm_m1_second"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCollegeCourse('X201510092502809')">查看</a></span></td>
+		    <td width="90" class="sytm_m1_first"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCbcCourse('0015EABE9E474AAF8E330B69CAAD10A4',0)">查看</a></span></td>
+		  </tr>
+		  	  	    		  <tr class="sytm_m2">
+		    <td width="40" class="sytm_m2_first">2</td>
+		    <td width="250" id="certificate" class="sytm_m2_second">预算会计</td>
+		    <td width="50" class="sytm_m2_first">X201510092502805</td>
+		    <td class="sytm_m2_second">三级</td>
+		    <td class="sytm_m2_first"></td>
+		    <td width="110" class="sytm_m2_second"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCollegeCourse('X201510092502805')">查看</a></span></td>
+		    <td width="90" class="sytm_m2_first"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCbcCourse('001157B3F200418E86D276E73C238A12',0)">查看</a></span></td>
+		  </tr>
+			  	    		  <tr class="sytm_m1">
+		    <td width="40" class="sytm_m1_first">3</td>
+		    <td width="250" id="certificate" class="sytm_m1_second">高等数学</td>
+		    <td width="50" class="sytm_m1_first">X201510092502804</td>
+		    <td class="sytm_m1_second">三级</td>
+		    <td class="sytm_m1_first"></td>
+		    <td width="110" class="sytm_m1_second"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCollegeCourse('X201510092502804')">查看</a></span></td>
+		    <td width="90" class="sytm_m1_first"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCbcCourse('000EA0E8EC17493CA62E5FF3EFD2E1C7',0)">查看</a></span></td>
+		  </tr>
+		  	  	    		  <tr class="sytm_m2">
+		    <td width="40" class="sytm_m2_first">4</td>
+		    <td width="250" id="certificate" class="sytm_m2_second">汽车液压与气压传动</td>
+		    <td width="50" class="sytm_m2_first">X201510092502803</td>
+		    <td class="sytm_m2_second">三级</td>
+		    <td class="sytm_m2_first"></td>
+		    <td width="110" class="sytm_m2_second"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCollegeCourse('X201510092502803')">查看</a></span></td>
+		    <td width="90" class="sytm_m2_first"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCbcCourse('000E37A909B14E6FB502D940695F3336',0)">查看</a></span></td>
+		  </tr>
+			  	    		  <tr class="sytm_m1">
+		    <td width="40" class="sytm_m1_first">5</td>
+		    <td width="250" id="certificate" class="sytm_m1_second">房地产经济管理入门</td>
+		    <td width="50" class="sytm_m1_first">X201510092502801</td>
+		    <td class="sytm_m1_second">三级</td>
+		    <td class="sytm_m1_first"></td>
+		    <td width="110" class="sytm_m1_second"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCollegeCourse('X201510092502801')">查看</a></span></td>
+		    <td width="90" class="sytm_m1_first"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCbcCourse('0005CBD8B4544A30BB1D84D00E7C4243',0)">查看</a></span></td>
+		  </tr>
+		  	  	    		  <tr class="sytm_m2">
+		    <td width="40" class="sytm_m2_first">6</td>
+		    <td width="250" id="certificate" class="sytm_m2_second">水电站与泵站建筑物</td>
+		    <td width="50" class="sytm_m2_first">X201510092502810</td>
+		    <td class="sytm_m2_second">三级</td>
+		    <td class="sytm_m2_first"></td>
+		    <td width="110" class="sytm_m2_second"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCollegeCourse('X201510092502810')">查看</a></span></td>
+		    <td width="90" class="sytm_m2_first"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCbcCourse('0019F9E1311A4F348702175261A4D8A2',0)">查看</a></span></td>
+		  </tr>
+			  	    		  <tr class="sytm_m1">
+		    <td width="40" class="sytm_m1_first">7</td>
+		    <td width="250" id="certificate" class="sytm_m1_second">北京文化专题讲座</td>
+		    <td width="50" class="sytm_m1_first">X201510092502808</td>
+		    <td class="sytm_m1_second">三级</td>
+		    <td class="sytm_m1_first"></td>
+		    <td width="110" class="sytm_m1_second"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCollegeCourse('X201510092502808')">查看</a></span></td>
+		    <td width="90" class="sytm_m1_first"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCbcCourse('0015E8F05938453287B9CAB3E48B2B89',0)">查看</a></span></td>
+		  </tr>
+		  	  	    		  <tr class="sytm_m2">
+		    <td width="40" class="sytm_m2_first">8</td>
+		    <td width="250" id="certificate" class="sytm_m2_second">邓小平理论和"三个代表"重要思想概论</td>
+		    <td width="50" class="sytm_m2_first">X201510092502807</td>
+		    <td class="sytm_m2_second">三级</td>
+		    <td class="sytm_m2_first"></td>
+		    <td width="110" class="sytm_m2_second"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCollegeCourse('X201510092502807')">查看</a></span></td>
+		    <td width="90" class="sytm_m2_first"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCbcCourse('001385E2A73F4AE7ADF78A00E51875F6',0)">查看</a></span></td>
+		  </tr>
+			  	    		  <tr class="sytm_m1">
+		    <td width="40" class="sytm_m1_first">9</td>
+		    <td width="250" id="certificate" class="sytm_m1_second">哲学基础</td>
+		    <td width="50" class="sytm_m1_first">X201510092502806</td>
+		    <td class="sytm_m1_second">三级</td>
+		    <td class="sytm_m1_first"></td>
+		    <td width="110" class="sytm_m1_second"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCollegeCourse('X201510092502806')">查看</a></span></td>
+		    <td width="90" class="sytm_m1_first"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCbcCourse('00131CDD6C9E45B8B51C8971BB45CB13',0)">查看</a></span></td>
+		  </tr>
+		  	  	    		  <tr class="sytm_m2">
+		    <td width="40" class="sytm_m2_first">10</td>
+		    <td width="250" id="certificate" class="sytm_m2_second">当代社会发展概论</td>
+		    <td width="50" class="sytm_m2_first">X201510092502802</td>
+		    <td class="sytm_m2_second">四级</td>
+		    <td class="sytm_m2_first"></td>
+		    <td width="110" class="sytm_m2_second"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCollegeCourse('X201510092502802')">查看</a></span></td>
+		    <td width="90" class="sytm_m2_first"><span class="sty_look"><img src="Portal/portalImages/navpicicon_06.png"><a href="javascript:stuResultToCbcCourse('000CB80A1F434BA4B87B659E6A5C9D71',0)">查看</a></span></td>
+		  </tr>
+			  	 </table>
+ 	<div class="page_com_stline"></div>
+	<div class="page_com_sty">
+	<div class="page_sty">
+	<a name="page_a" href="javascript:;" onclick="javascript:AlablePost('/CBC/login!educationGain.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45d98cb40014','Page':'5','pageNo':'1','certificateName':'noteexit','awardOrgName':'noteexit'})">首页</a>
+	<!--<a name="page_a" href="/CBC/login!educationGain.htm?id=402889fd4c45bf3f014c45d3fbee0006&typeId=402889fd4c45bf3f014c45d98cb40014&Page=5&pageNo=1&certificateName=noteexit&awardOrgName=noteexit#mark">首页</a>-->
+		
+	<!--  -->
+				<a name="page_a" class="page_s" href="javascript:;" onclick="javascript:AlablePost('/CBC/login!educationGain.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45d98cb40014','Page':'5','pageNo':'1','certificateName':'noteexit','awardOrgName':'noteexit'})">1</a>
+		<!-- <a name="page_a" class="page_s" href="/CBC/login!educationGain.htm?id=402889fd4c45bf3f014c45d3fbee0006&typeId=402889fd4c45bf3f014c45d98cb40014&Page=5&pageNo=1&certificateName=noteexit&awardOrgName=noteexit#mark" >1</a> -->
+					<a name="page_a" href="javascript:;" onclick="javascript:AlablePost('/CBC/login!educationGain.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45d98cb40014','Page':'5','pageNo':'2','certificateName':'noteexit','awardOrgName':'noteexit'})">2</a>
+		<!-- <a name="page_a" href="/CBC/login!educationGain.htm?id=402889fd4c45bf3f014c45d3fbee0006&typeId=402889fd4c45bf3f014c45d98cb40014&Page=5&pageNo=2&certificateName=noteexit&awardOrgName=noteexit#mark" >2</a> -->
+					<a name="page_a" href="javascript:;" onclick="javascript:AlablePost('/CBC/login!educationGain.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45d98cb40014','Page':'5','pageNo':'3','certificateName':'noteexit','awardOrgName':'noteexit'})">3</a>
+		<!-- <a name="page_a" href="/CBC/login!educationGain.htm?id=402889fd4c45bf3f014c45d3fbee0006&typeId=402889fd4c45bf3f014c45d98cb40014&Page=5&pageNo=3&certificateName=noteexit&awardOrgName=noteexit#mark" >3</a> -->
+					<a name="page_a" href="javascript:;" onclick="javascript:AlablePost('/CBC/login!educationGain.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45d98cb40014','Page':'5','pageNo':'4','certificateName':'noteexit','awardOrgName':'noteexit'})">4</a>
+		<!-- <a name="page_a" href="/CBC/login!educationGain.htm?id=402889fd4c45bf3f014c45d3fbee0006&typeId=402889fd4c45bf3f014c45d98cb40014&Page=5&pageNo=4&certificateName=noteexit&awardOrgName=noteexit#mark" >4</a> -->
+					<a name="page_a" href="javascript:;" onclick="javascript:AlablePost('/CBC/login!educationGain.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45d98cb40014','Page':'5','pageNo':'5','certificateName':'noteexit','awardOrgName':'noteexit'})">5</a>
+		<!-- <a name="page_a" href="/CBC/login!educationGain.htm?id=402889fd4c45bf3f014c45d3fbee0006&typeId=402889fd4c45bf3f014c45d98cb40014&Page=5&pageNo=5&certificateName=noteexit&awardOrgName=noteexit#mark" >5</a> -->
+			
+	<!-- 	<a href="/CBC/login!educationGain.htm?cssType=402889fd4c45bf3f014c45d3fbee0006&typeId=2&Page=5&pageNo=0&previousPage=next">&gt;&gt;</a>|
+	 -->
+		<!-- <a href="/CBC/login!educationGain.htm?cssType=402889fd4c45bf3f014c45d3fbee0006&typeId=2&Page=5&pageNo=1&nextPage=next#mark" class="page-login"><i class="fa fa-angle-double-right"></i></a>
+	<a name="page_a" href="/CBC/login!educationGain.htm?id=402889fd4c45bf3f014c45d3fbee0006&typeId=402889fd4c45bf3f014c45d98cb40014&Page=5&pageNo=1&nextPage=next&certificateName=noteexit&awardOrgName=noteexit#mark">下一页</a> -->
+	<a name="page_a" href="javascript:;" onclick="javascript:AlablePost('/CBC/login!educationGain.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45d98cb40014','Page':'5','pageNo':'1','nextPage':'next','certificateName':'noteexit','awardOrgName':'noteexit'})">下一页</a>
+		<!-- <a name="page_a" href="/CBC/login!educationGain.htm?id=402889fd4c45bf3f014c45d3fbee0006&typeId=402889fd4c45bf3f014c45d98cb40014&Page=5&pageNo=2555&certificateName=noteexit&awardOrgName=noteexit#mark">尾页</a> -->
+	<a name="page_a" href="javascript:;" onclick="javascript:AlablePost('/CBC/login!educationGain.htm#mark',{'id':'402889fd4c45bf3f014c45d3fbee0006','typeId':'402889fd4c45bf3f014c45d98cb40014','Page':'5','pageNo':'2555','certificateName':'noteexit','awardOrgName':'noteexit'})">尾页</a>
+	</div>
+	</div>
+</div>
+</div>
+
+</div>
+<!--main-->
+</div>
+<div class="cy_indexfooter">
+	<div class="cy_indexfooter01">
+    	<img src="../Portal/portalImages/indexpic_04.png">
+       <p>重庆市终身学习学分银行管理中心 TEL:17302331697 地址：重庆市九龙坡区华龙大道1号<br>
+       <span>Copyright ©&nbsp;</span>版权所有 重庆市终身学习学分银行&nbsp;。&nbsp;<img src="../Portal/portalImages/icon-police.png" style="float: initial; padding-top: 0px;">渝ICP备05003321</p>
+    </div>
+</div>
+ <!--indexcontainer--> 
+<script type="text/javascript" src="../Portal/ziqiu/websocket/websocket.js"></script>
+<script type="text/javascript">
+	if(''!=''){
+	 	socket("");
+	 }
+</script>
+</body>
+</html>
